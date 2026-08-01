@@ -1,0 +1,15 @@
+# Windows-generated files
+Thumbs.db
+Desktop.ini
+
+# macOS-generated files
+.DS_Store
+
+# Editor-specific settings
+.vscode/
+.idea/
+
+# Log and temporary files
+*.log
+*.tmp
+*~
