@@ -1,4 +1,110 @@
-/*
- * LearnBridge responsive styles will be added as
- * the project interfaces are developed.
- */
+/* =========================================================
+   Large mobile phones and small tablets
+   ========================================================= */
+
+@media (min-width: 481px) {
+  .container {
+    inline-size: min(
+      calc(100% - 3rem),
+      var(--container-width)
+    );
+  }
+
+  .navigation-actions {
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+
+  .footer-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .resource-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+
+/* =========================================================
+   Tablets and small laptops
+   ========================================================= */
+
+@media (min-width: 769px) {
+  .section {
+    padding-block: var(--space-16);
+  }
+
+  .header-layout {
+    flex-direction: row;
+    align-items: center;
+    gap: var(--space-6);
+  }
+
+  .primary-navigation {
+    flex: 1;
+
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-6);
+  }
+
+  .navigation-list {
+    margin-inline-start: auto;
+  }
+
+  .navigation-actions {
+    flex-wrap: nowrap;
+  }
+
+  .page-introduction {
+    padding-block: var(--space-6);
+  }
+
+  .page-introduction .container {
+    padding-inline-end: min(10vw, 7rem);
+  }
+
+  .footer-grid {
+    grid-template-columns: 1.4fr 1fr 1fr;
+  }
+
+  .footer-social {
+    grid-column: span 3;
+  }
+}
+
+
+/* =========================================================
+   Desktop monitors
+   ========================================================= */
+
+@media (min-width: 1025px) {
+  .section {
+    padding-block: var(--space-20);
+  }
+
+  .header-layout {
+    min-block-size: 5rem;
+    padding-block: var(--space-3);
+  }
+
+  .navigation-list {
+    gap: var(--space-3);
+  }
+
+  .footer-grid {
+    grid-template-columns:
+      minmax(15rem, 1.5fr)
+      repeat(3, minmax(9rem, 1fr));
+  }
+
+  .footer-social {
+    grid-column: auto;
+  }
+
+  .resource-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
