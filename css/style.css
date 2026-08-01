@@ -1645,3 +1645,43 @@ html[dir="rtl"] .text-link::after {
     transition-duration: 0.01ms !important;
   }
 }
+
+html[lang="ar"] body {
+  font-family: var(--font-family-ar);
+  line-height: 1.9;
+}
+
+html[lang="ar"] h1,
+html[lang="ar"] h2,
+html[lang="ar"] h3,
+html[lang="ar"] h4 {
+  line-height: 1.55;
+}
+
+html[lang="ar"] .button,
+html[lang="ar"] .control-button,
+html[lang="ar"] .navigation-link {
+  line-height: 1.6;
+}
+
+.brand,
+.brand-mark,
+.brand-name,
+.category-icon,
+.resource-card__icon,
+.resource-preview-icon,
+.benefit-icon,
+.hero-dashboard__label {
+  direction: ltr;
+  unicode-bidi: isolate;
+}
+
+.language-toggle [data-language-toggle-label] {
+  white-space: nowrap;
+}
+
+html[lang="ar"] input,
+html[lang="ar"] textarea,
+html[lang="ar"] select {
+  text-align: start;
+}
