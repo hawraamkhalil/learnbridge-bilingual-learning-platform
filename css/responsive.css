@@ -108,3 +108,114 @@
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 }
+
+/* =========================================================
+   Home page: large mobile phones
+   ========================================================= */
+
+@media (min-width: 481px) {
+  .hero-actions {
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+
+  .category-grid,
+  .featured-grid,
+  .benefit-grid,
+  .stats-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .newsletter-fields {
+    grid-template-columns: minmax(0, 1fr) auto;
+  }
+
+  .newsletter-fields .button {
+    min-inline-size: 8.5rem;
+  }
+}
+
+
+/* =========================================================
+   Home page: tablets and small laptops
+   ========================================================= */
+
+@media (min-width: 769px) {
+  .hero-grid {
+    grid-template-columns:
+      minmax(0, 1.1fr)
+      minmax(19rem, 0.9fr);
+  }
+
+  .hero-visual {
+    padding: var(--space-5);
+  }
+
+  .category-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .steps-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .section-header-row {
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: space-between;
+  }
+
+  .newsletter-panel {
+    grid-template-columns:
+      minmax(0, 0.9fr)
+      minmax(20rem, 1.1fr);
+
+    align-items: center;
+    padding: var(--space-8);
+  }
+
+  .whatsapp-panel {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: var(--space-8);
+  }
+
+  .whatsapp-panel .button {
+    flex: none;
+  }
+}
+
+
+/* =========================================================
+   Home page: desktop monitors
+   ========================================================= */
+
+@media (min-width: 1025px) {
+  .hero-grid {
+    gap: var(--space-16);
+  }
+
+  .hero-copy {
+    padding-block: var(--space-6);
+  }
+
+  .hero-dashboard {
+    padding: var(--space-6);
+  }
+
+  .featured-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .benefit-grid,
+  .stats-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  .newsletter-panel {
+    padding: var(--space-10);
+  }
+}

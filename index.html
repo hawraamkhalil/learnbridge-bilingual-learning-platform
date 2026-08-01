@@ -18,8 +18,8 @@
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Kufi+Arabic:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     >
-    
-    <title>LearnBridge | Home</title>
+
+    <title>LearnBridge | Bilingual Educational Resources</title>
 
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/responsive.css">
@@ -28,7 +28,7 @@
     <script src="js/main.js" defer></script>
   </head>
 
-  <body data-page="home">
+  <body id="top" data-page="home">
     <a
       class="skip-link"
       href="#main-content"
@@ -142,29 +142,850 @@
 
     <main id="main-content">
       <section
-        class="page-introduction section"
+        class="hero section"
         aria-labelledby="home-page-title"
       >
+        <div class="container hero-grid">
+          <div class="hero-copy">
+            <p
+              class="eyebrow"
+              data-i18n="home.eyebrow"
+            >
+              Learn clearly. Grow confidently.
+            </p>
+
+            <h1
+              id="home-page-title"
+              data-i18n="home.heroTitle"
+            >
+              Discover educational resources that match your learning journey
+            </h1>
+
+            <p
+              class="hero-description"
+              data-i18n="home.heroDescription"
+            >
+              Explore carefully organized resources in programming, web
+              development, data science, artificial intelligence, mathematics,
+              and career development—in both English and Arabic.
+            </p>
+
+            <div class="hero-actions">
+              <a
+                class="button button--primary"
+                href="resources.html"
+                data-i18n="home.browseResources"
+              >
+                Browse resources
+              </a>
+
+              <a
+                class="button button--secondary"
+                href="about.html"
+                data-i18n="home.learnMore"
+              >
+                Learn about LearnBridge
+              </a>
+            </div>
+
+            <ul
+              class="hero-highlights"
+              aria-label="Platform highlights"
+              data-i18n-aria-label="home.highlightsLabel"
+            >
+              <li data-i18n="home.highlightBilingual">
+                English and Arabic
+              </li>
+
+              <li data-i18n="home.highlightResponsive">
+                Mobile friendly
+              </li>
+
+              <li data-i18n="home.highlightAccessible">
+                Accessible learning
+              </li>
+            </ul>
+          </div>
+
+          <div
+            class="hero-visual"
+            role="img"
+            aria-label="Preview of the LearnBridge resource experience"
+            data-i18n-aria-label="home.heroPreviewLabel"
+          >
+            <div class="hero-dashboard">
+              <div class="hero-dashboard__header">
+                <div>
+                  <span class="hero-dashboard__label">LearnBridge</span>
+                  <strong data-i18n="home.previewHeading">
+                    Your learning dashboard
+                  </strong>
+                </div>
+
+                <span class="badge" data-i18n="home.previewLevel">
+                  Beginner
+                </span>
+              </div>
+
+              <div class="hero-progress">
+                <div class="hero-progress__text">
+                  <span data-i18n="home.weeklyProgress">
+                    Weekly learning progress
+                  </span>
+
+                  <strong>68%</strong>
+                </div>
+
+                <div
+                  class="progress-track"
+                  role="progressbar"
+                  aria-label="Weekly learning progress"
+                  aria-valuemin="0"
+                  aria-valuemax="100"
+                  aria-valuenow="68"
+                  data-i18n-aria-label="home.weeklyProgress"
+                >
+                  <span class="progress-value"></span>
+                </div>
+              </div>
+
+              <div class="hero-resource-preview">
+                <span
+                  class="resource-preview-icon"
+                  aria-hidden="true"
+                >
+                  &lt;/&gt;
+                </span>
+
+                <div>
+                  <strong data-i18n="home.previewResourceTitle">
+                    Introduction to HTML
+                  </strong>
+
+                  <span data-i18n="home.previewResourceMeta">
+                    Tutorial · 45 minutes
+                  </span>
+                </div>
+              </div>
+
+              <div class="hero-stat-grid">
+                <div class="hero-mini-stat">
+                  <strong>6</strong>
+                  <span data-i18n="home.previewCategories">
+                    Categories
+                  </span>
+                </div>
+
+                <div class="hero-mini-stat">
+                  <strong>12+</strong>
+                  <span data-i18n="home.previewResources">
+                    Resources
+                  </span>
+                </div>
+
+                <div class="hero-mini-stat">
+                  <strong>2</strong>
+                  <span data-i18n="home.previewLanguages">
+                    Languages
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section
+        class="section"
+        aria-labelledby="categories-title"
+      >
         <div class="container">
-          <p
-            class="eyebrow"
-            data-i18n="home.eyebrow"
-          >
-            Bilingual learning platform
-          </p>
+          <div class="section-heading">
+            <p
+              class="eyebrow"
+              data-i18n="home.categoriesEyebrow"
+            >
+              Explore by subject
+            </p>
 
-          <h1
-            id="home-page-title"
-            data-i18n="home.placeholderTitle"
-          >
-            Welcome to LearnBridge
-          </h1>
+            <h2
+              id="categories-title"
+              data-i18n="home.categoriesTitle"
+            >
+              Choose a learning category
+            </h2>
 
-          <p data-i18n="home.placeholderDescription">
-            The complete home page will be developed in Phase 4. This semantic
-            foundation is ready for the hero, categories, featured resources,
-            benefits, statistics, newsletter, and WhatsApp sections.
-          </p>
+            <p data-i18n="home.categoriesDescription">
+              Start with the topic that matches your goals, experience, and
+              interests.
+            </p>
+          </div>
+
+          <div class="category-grid">
+            <article class="card category-card">
+              <span class="category-icon" aria-hidden="true">
+                &lt;/&gt;
+              </span>
+
+              <h3 data-i18n="categories.webDevelopment">
+                Web Development
+              </h3>
+
+              <p data-i18n="categories.webDevelopmentDescription">
+                Learn how modern websites are structured, styled, and made
+                interactive.
+              </p>
+
+              <a
+                class="category-link"
+                href="resources.html#resource-library"
+                data-i18n="home.exploreCategory"
+              >
+                Explore resources
+              </a>
+            </article>
+
+            <article class="card category-card">
+              <span class="category-icon" aria-hidden="true">
+                { }
+              </span>
+
+              <h3 data-i18n="categories.programming">
+                Programming
+              </h3>
+
+              <p data-i18n="categories.programmingDescription">
+                Build programming logic and strengthen your problem-solving
+                foundations.
+              </p>
+
+              <a
+                class="category-link"
+                href="resources.html#resource-library"
+                data-i18n="home.exploreCategory"
+              >
+                Explore resources
+              </a>
+            </article>
+
+            <article class="card category-card">
+              <span class="category-icon" aria-hidden="true">
+                DS
+              </span>
+
+              <h3 data-i18n="categories.dataScience">
+                Data Science
+              </h3>
+
+              <p data-i18n="categories.dataScienceDescription">
+                Explore data analysis, visualization, statistics, and
+                introductory machine learning.
+              </p>
+
+              <a
+                class="category-link"
+                href="resources.html#resource-library"
+                data-i18n="home.exploreCategory"
+              >
+                Explore resources
+              </a>
+            </article>
+
+            <article class="card category-card">
+              <span class="category-icon" aria-hidden="true">
+                AI
+              </span>
+
+              <h3 data-i18n="categories.artificialIntelligence">
+                Artificial Intelligence
+              </h3>
+
+              <p data-i18n="categories.artificialIntelligenceDescription">
+                Understand important AI concepts, tools, applications, and
+                responsible use.
+              </p>
+
+              <a
+                class="category-link"
+                href="resources.html#resource-library"
+                data-i18n="home.exploreCategory"
+              >
+                Explore resources
+              </a>
+            </article>
+
+            <article class="card category-card">
+              <span class="category-icon" aria-hidden="true">
+                ∑
+              </span>
+
+              <h3 data-i18n="categories.mathematics">
+                Mathematics
+              </h3>
+
+              <p data-i18n="categories.mathematicsDescription">
+                Improve mathematical understanding through clear explanations
+                and practical exercises.
+              </p>
+
+              <a
+                class="category-link"
+                href="resources.html#resource-library"
+                data-i18n="home.exploreCategory"
+              >
+                Explore resources
+              </a>
+            </article>
+
+            <article class="card category-card">
+              <span class="category-icon" aria-hidden="true">
+                CV
+              </span>
+
+              <h3 data-i18n="categories.careerDevelopment">
+                Career Development
+              </h3>
+
+              <p data-i18n="categories.careerDevelopmentDescription">
+                Strengthen your portfolio, CV, interview preparation, and
+                professional skills.
+              </p>
+
+              <a
+                class="category-link"
+                href="resources.html#resource-library"
+                data-i18n="home.exploreCategory"
+              >
+                Explore resources
+              </a>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section
+        class="section section--subtle"
+        aria-labelledby="featured-resources-title"
+      >
+        <div class="container">
+          <div class="section-header-row">
+            <div class="section-heading">
+              <p
+                class="eyebrow"
+                data-i18n="home.featuredEyebrow"
+              >
+                Recommended starting points
+              </p>
+
+              <h2
+                id="featured-resources-title"
+                data-i18n="home.featuredTitle"
+              >
+                Featured learning resources
+              </h2>
+
+              <p data-i18n="home.featuredDescription">
+                Begin with practical resources selected for learners who are
+                building strong foundations.
+              </p>
+            </div>
+
+            <a
+              class="text-link"
+              href="resources.html"
+              data-i18n="home.viewAllResources"
+            >
+              View all resources
+            </a>
+          </div>
+
+          <div class="featured-grid">
+            <article class="card resource-card">
+              <div
+                class="resource-card__icon"
+                aria-hidden="true"
+              >
+                HTML
+              </div>
+
+              <div class="resource-card__badges">
+                <span
+                  class="badge"
+                  data-i18n="resourceLabels.beginner"
+                >
+                  Beginner
+                </span>
+
+                <span
+                  class="badge badge--accent"
+                  data-i18n="resourceLabels.tutorial"
+                >
+                  Tutorial
+                </span>
+              </div>
+
+              <h3 data-i18n="featured.htmlTitle">
+                Introduction to HTML
+              </h3>
+
+              <p data-i18n="featured.htmlDescription">
+                Understand the semantic structure used to build modern web
+                pages.
+              </p>
+
+              <div class="resource-card__meta">
+                <span data-i18n="featured.duration45">
+                  45 minutes
+                </span>
+
+                <span data-i18n="featured.languageEnglish">
+                  English
+                </span>
+              </div>
+
+              <a
+                class="button button--secondary"
+                href="resources.html"
+                data-i18n="home.viewResource"
+              >
+                View resource
+              </a>
+            </article>
+
+            <article class="card resource-card">
+              <div
+                class="resource-card__icon"
+                aria-hidden="true"
+              >
+                PY
+              </div>
+
+              <div class="resource-card__badges">
+                <span
+                  class="badge"
+                  data-i18n="resourceLabels.beginner"
+                >
+                  Beginner
+                </span>
+
+                <span
+                  class="badge badge--accent"
+                  data-i18n="resourceLabels.course"
+                >
+                  Course
+                </span>
+              </div>
+
+              <h3 data-i18n="featured.pythonTitle">
+                Python Programming Foundations
+              </h3>
+
+              <p data-i18n="featured.pythonDescription">
+                Learn variables, conditions, loops, functions, and basic
+                problem solving.
+              </p>
+
+              <div class="resource-card__meta">
+                <span data-i18n="featured.duration180">
+                  3 hours
+                </span>
+
+                <span data-i18n="featured.languageBilingual">
+                  English and Arabic
+                </span>
+              </div>
+
+              <a
+                class="button button--secondary"
+                href="resources.html"
+                data-i18n="home.viewResource"
+              >
+                View resource
+              </a>
+            </article>
+
+            <article class="card resource-card">
+              <div
+                class="resource-card__icon"
+                aria-hidden="true"
+              >
+                AI
+              </div>
+
+              <div class="resource-card__badges">
+                <span
+                  class="badge"
+                  data-i18n="resourceLabels.beginner"
+                >
+                  Beginner
+                </span>
+
+                <span
+                  class="badge badge--accent"
+                  data-i18n="resourceLabels.article"
+                >
+                  Article
+                </span>
+              </div>
+
+              <h3 data-i18n="featured.aiTitle">
+                Artificial Intelligence Explained
+              </h3>
+
+              <p data-i18n="featured.aiDescription">
+                Explore how AI systems learn from data and where they are used
+                responsibly.
+              </p>
+
+              <div class="resource-card__meta">
+                <span data-i18n="featured.duration20">
+                  20 minutes
+                </span>
+
+                <span data-i18n="featured.languageArabic">
+                  Arabic
+                </span>
+              </div>
+
+              <a
+                class="button button--secondary"
+                href="resources.html"
+                data-i18n="home.viewResource"
+              >
+                View resource
+              </a>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section
+        class="section"
+        aria-labelledby="how-it-works-title"
+      >
+        <div class="container">
+          <div class="section-heading">
+            <p
+              class="eyebrow"
+              data-i18n="home.howItWorksEyebrow"
+            >
+              A simple learning process
+            </p>
+
+            <h2
+              id="how-it-works-title"
+              data-i18n="home.howItWorksTitle"
+            >
+              How LearnBridge works
+            </h2>
+
+            <p data-i18n="home.howItWorksDescription">
+              Find useful learning material without moving through an
+              overwhelming collection of unrelated links.
+            </p>
+          </div>
+
+          <div class="steps-grid">
+            <article class="step-card">
+              <span class="step-number" aria-hidden="true">01</span>
+
+              <h3 data-i18n="home.stepDiscoverTitle">
+                Discover
+              </h3>
+
+              <p data-i18n="home.stepDiscoverDescription">
+                Browse categories or search for a topic that matches your
+                current learning goal.
+              </p>
+            </article>
+
+            <article class="step-card">
+              <span class="step-number" aria-hidden="true">02</span>
+
+              <h3 data-i18n="home.stepFilterTitle">
+                Filter
+              </h3>
+
+              <p data-i18n="home.stepFilterDescription">
+                Narrow the results by level, resource type, language, or
+                estimated learning time.
+              </p>
+            </article>
+
+            <article class="step-card">
+              <span class="step-number" aria-hidden="true">03</span>
+
+              <h3 data-i18n="home.stepSaveTitle">
+                Save and learn
+              </h3>
+
+              <p data-i18n="home.stepSaveDescription">
+                Bookmark useful resources and return to them whenever you are
+                ready to continue.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section
+        class="section section--subtle"
+        aria-labelledby="benefits-title"
+      >
+        <div class="container">
+          <div class="section-heading">
+            <p
+              class="eyebrow"
+              data-i18n="home.benefitsEyebrow"
+            >
+              Designed around learners
+            </p>
+
+            <h2
+              id="benefits-title"
+              data-i18n="home.benefitsTitle"
+            >
+              Why learners can benefit from LearnBridge
+            </h2>
+
+            <p data-i18n="home.benefitsDescription">
+              Every part of the platform is planned to make educational
+              resources easier to understand and access.
+            </p>
+          </div>
+
+          <div class="benefit-grid">
+            <article class="card benefit-card">
+              <span class="benefit-icon" aria-hidden="true">EN / AR</span>
+
+              <h3 data-i18n="home.bilingualBenefitTitle">
+                Bilingual access
+              </h3>
+
+              <p data-i18n="home.bilingualBenefitDescription">
+                Move between English and Arabic while preserving clear and
+                natural page layouts.
+              </p>
+            </article>
+
+            <article class="card benefit-card">
+              <span class="benefit-icon" aria-hidden="true">◎</span>
+
+              <h3 data-i18n="home.organizedBenefitTitle">
+                Organized discovery
+              </h3>
+
+              <p data-i18n="home.organizedBenefitDescription">
+                Search and filters help you reach relevant resources more
+                quickly.
+              </p>
+            </article>
+
+            <article class="card benefit-card">
+              <span class="benefit-icon" aria-hidden="true">✓</span>
+
+              <h3 data-i18n="home.accessibleBenefitTitle">
+                Accessible interface
+              </h3>
+
+              <p data-i18n="home.accessibleBenefitDescription">
+                Semantic structure, keyboard support, readable contrast, and
+                visible focus improve access.
+              </p>
+            </article>
+
+            <article class="card benefit-card">
+              <span class="benefit-icon" aria-hidden="true">▣</span>
+
+              <h3 data-i18n="home.flexibleBenefitTitle">
+                Learn anywhere
+              </h3>
+
+              <p data-i18n="home.flexibleBenefitDescription">
+                The responsive layout works across mobile phones, tablets, and
+                desktop screens.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section
+        class="stats-section section"
+        aria-labelledby="statistics-title"
+      >
+        <div class="container">
+          <div class="section-heading stats-heading">
+            <p
+              class="eyebrow"
+              data-i18n="home.statisticsEyebrow"
+            >
+              Platform overview
+            </p>
+
+            <h2
+              id="statistics-title"
+              data-i18n="home.statisticsTitle"
+            >
+              Learning opportunities at a glance
+            </h2>
+          </div>
+
+          <div class="stats-grid">
+            <article class="stat-card">
+              <strong class="stat-value">6</strong>
+
+              <span data-i18n="home.statCategories">
+                Learning categories
+              </span>
+            </article>
+
+            <article class="stat-card">
+              <strong class="stat-value">12+</strong>
+
+              <span data-i18n="home.statResources">
+                Starter resources
+              </span>
+            </article>
+
+            <article class="stat-card">
+              <strong class="stat-value">2</strong>
+
+              <span data-i18n="home.statLanguages">
+                Supported languages
+              </span>
+            </article>
+
+            <article class="stat-card">
+              <strong class="stat-value">100%</strong>
+
+              <span data-i18n="home.statResponsive">
+                Responsive interface
+              </span>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section
+        class="section"
+        aria-labelledby="newsletter-title"
+      >
+        <div class="container">
+          <div class="newsletter-panel">
+            <div class="newsletter-copy">
+              <p
+                class="eyebrow"
+                data-i18n="home.newsletterEyebrow"
+              >
+                Continue learning
+              </p>
+
+              <h2
+                id="newsletter-title"
+                data-i18n="home.newsletterTitle"
+              >
+                Receive future learning updates
+              </h2>
+
+              <p data-i18n="home.newsletterDescription">
+                Join the placeholder newsletter list to receive new resource
+                announcements after this feature is connected to a real
+                service.
+              </p>
+            </div>
+
+            <form
+              class="newsletter-form"
+              action="#"
+              method="post"
+              data-newsletter-form
+            >
+              <div class="newsletter-fields">
+                <label
+                  class="visually-hidden"
+                  for="newsletter-email"
+                  data-i18n="home.newsletterEmailLabel"
+                >
+                  Email address
+                </label>
+
+                <input
+                  id="newsletter-email"
+                  class="form-control"
+                  name="email"
+                  type="email"
+                  autocomplete="email"
+                  placeholder="Enter your email address"
+                  data-i18n-placeholder="home.newsletterPlaceholder"
+                  aria-describedby="newsletter-note newsletter-message"
+                  required
+                >
+
+                <button
+                  class="button button--primary"
+                  type="submit"
+                  data-i18n="home.subscribeButton"
+                >
+                  Subscribe
+                </button>
+              </div>
+
+              <p
+                id="newsletter-note"
+                class="newsletter-note"
+                data-i18n="home.newsletterNote"
+              >
+                This demonstration form does not send or store your email yet.
+              </p>
+
+              <p
+                id="newsletter-message"
+                class="field-message"
+                data-newsletter-message
+                aria-live="polite"
+              ></p>
+            </form>
+          </div>
+        </div>
+      </section>
+
+      <section
+        class="section whatsapp-section"
+        aria-labelledby="home-whatsapp-title"
+      >
+        <div class="container">
+          <div class="whatsapp-panel">
+            <div>
+              <p
+                class="eyebrow"
+                data-i18n="home.whatsappEyebrow"
+              >
+                Need help?
+              </p>
+
+              <h2
+                id="home-whatsapp-title"
+                data-i18n="home.whatsappTitle"
+              >
+                Ask about the available educational resources
+              </h2>
+
+              <p data-i18n="home.whatsappDescription">
+                Contact LearnBridge through WhatsApp for help finding a useful
+                starting point.
+              </p>
+            </div>
+
+            <a
+              class="button button--whatsapp"
+              href="contact.html#whatsapp-contact"
+              data-whatsapp-link
+              data-i18n="home.whatsappButton"
+            >
+              Contact through WhatsApp
+            </a>
+          </div>
         </div>
       </section>
     </main>
@@ -269,5 +1090,20 @@
         </p>
       </div>
     </footer>
+
+    <a
+      class="back-to-top"
+      href="#top"
+      aria-label="Back to top"
+      data-i18n-aria-label="common.backToTop"
+    >
+      <span aria-hidden="true">↑</span>
+      <span
+        class="visually-hidden"
+        data-i18n="common.backToTop"
+      >
+        Back to top
+      </span>
+    </a>
   </body>
 </html>
