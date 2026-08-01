@@ -219,3 +219,38 @@
     padding: var(--space-10);
   }
 }
+
+/* =========================================================
+   Responsive navigation: desktop layout
+   ========================================================= */
+
+@media (min-width: 769px) {
+  .header-layout {
+    display: flex;
+  }
+
+  .menu-toggle,
+  .js-enabled .menu-toggle {
+    display: none;
+  }
+
+  .primary-navigation,
+  .js-enabled .primary-navigation,
+  .js-enabled .primary-navigation.is-open {
+    display: flex;
+
+    padding-block-start: 0;
+
+    border-block-start: 0;
+  }
+
+  .navigation-list {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .navigation-link {
+    justify-content: center;
+    inline-size: auto;
+  }
+}

@@ -50,9 +50,34 @@
           <span class="brand-name">LearnBridge</span>
         </a>
 
+        <button
+          class="menu-toggle control-button"
+          type="button"
+          aria-expanded="false"
+          aria-controls="primary-navigation"
+          aria-label="Open navigation menu"
+          data-menu-toggle
+          data-i18n-aria-label="common.openMenu"
+        >
+          <span class="menu-toggle__icon" aria-hidden="true">
+            <span class="menu-toggle__bar"></span>
+            <span class="menu-toggle__bar"></span>
+            <span class="menu-toggle__bar"></span>
+          </span>
+
+          <span
+            class="menu-toggle__label"
+            data-i18n="common.menu"
+          >
+            Menu
+          </span>
+        </button>
+
+
         <nav
           id="primary-navigation"
           class="primary-navigation"
+          data-primary-navigation
           aria-label="Primary navigation"
           data-i18n-aria-label="common.primaryNavigation"
         >
