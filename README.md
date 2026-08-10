@@ -8,6 +8,10 @@ The platform helps learners discover, search, filter, sort, save, and explore ed
 
 ---
 
+## Live Demo
+
+[View LearnBridge Live](https://hawraamkhalil.github.io/learnbridge-bilingual-learning-platform/)
+
 ## Project Overview
 
 LearnBridge was developed as a front-end portfolio project focused on building a complete interactive website without relying on a CSS framework, JavaScript framework, or pre-built UI component library.
