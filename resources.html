@@ -517,6 +517,31 @@
                     Longest first
                   </option>
                 </select>
+
+                <fieldset class="bookmark-filter-field">
+                  <legend
+                    class="form-label"
+                    data-i18n="resources.bookmarkFilterLabel"
+                  >
+                    Bookmarks
+                  </legend>
+
+                  <label
+                    class="bookmark-filter-control"
+                    for="bookmarked-only-filter"
+                  >
+                    <input
+                      id="bookmarked-only-filter"
+                      type="checkbox"
+                      name="bookmarked-only"
+                      data-bookmarked-only
+                    >
+
+                    <span data-i18n="resources.bookmarkedOnly">
+                      Show bookmarked only
+                    </span>
+                  </label>
+                </fieldset>
               </div>
             </div>
 
@@ -552,11 +577,17 @@
             data-no-resources
             hidden
           >
-            <h2 data-i18n="resources.noResultsTitle">
+            <h2
+              data-no-results-title
+              data-i18n="resources.noResultsTitle"
+            >
               No matching resources
             </h2>
 
-            <p data-i18n="resources.noResultsDescription">
+            <p
+              data-no-results-description
+              data-i18n="resources.noResultsDescription"
+            >
               Try a different search term or reset one or more filters.
             </p>
 

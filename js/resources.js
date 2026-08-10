@@ -1,5 +1,8 @@
 "use strict";
 
+const LEARNBRIDGE_BOOKMARK_STORAGE_KEY =
+  "learnbridge-bookmarks";
+
 const CATEGORY_TRANSLATION_KEYS = Object.freeze({
   "web-development": "categories.webDevelopment",
   programming: "categories.programming",
@@ -38,10 +41,13 @@ const resourceState = {
   difficulty: "all",
   type: "all",
   language: "all",
-  sort: "title-asc"
+  sort: "title-asc",
+  bookmarkedOnly: false
 };
 
 const resourceElements = {};
+
+let bookmarkedResourceIds = new Set();
 
 
 /**
@@ -83,7 +89,7 @@ function translateResourceText(key) {
 
 
 /**
- * Replaces placeholders such as {count}.
+ * Replaces placeholders such as {count} and {title}.
  *
  * @param {string} template
  * @param {object} values
@@ -141,6 +147,102 @@ function getResourceData() {
 
 
 /**
+ * Returns the IDs that currently exist in resource data.
+ *
+ * @returns {Set<number>}
+ */
+function getValidResourceIds() {
+  return new Set(
+    getResourceData().map(function (resource) {
+      return resource.id;
+    })
+  );
+}
+
+
+/**
+ * Loads saved bookmark IDs from localStorage.
+ *
+ * Invalid or removed IDs are ignored.
+ *
+ * @returns {Set<number>}
+ */
+function loadBookmarks() {
+  try {
+    const savedBookmarks = localStorage.getItem(
+      LEARNBRIDGE_BOOKMARK_STORAGE_KEY
+    );
+
+    if (!savedBookmarks) {
+      return new Set();
+    }
+
+    const parsedBookmarks =
+      JSON.parse(savedBookmarks);
+
+    if (!Array.isArray(parsedBookmarks)) {
+      return new Set();
+    }
+
+    const validResourceIds =
+      getValidResourceIds();
+
+    const validBookmarks =
+      parsedBookmarks.filter(function (resourceId) {
+        return (
+          Number.isInteger(resourceId) &&
+          validResourceIds.has(resourceId)
+        );
+      });
+
+    return new Set(validBookmarks);
+  } catch (error) {
+    console.warn(
+      "LearnBridge could not load bookmarks.",
+      error
+    );
+
+    return new Set();
+  }
+}
+
+
+/**
+ * Saves bookmark IDs to localStorage.
+ */
+function saveBookmarks() {
+  try {
+    const bookmarkIds = [
+      ...bookmarkedResourceIds
+    ].sort(function (firstId, secondId) {
+      return firstId - secondId;
+    });
+
+    localStorage.setItem(
+      LEARNBRIDGE_BOOKMARK_STORAGE_KEY,
+      JSON.stringify(bookmarkIds)
+    );
+  } catch (error) {
+    console.warn(
+      "LearnBridge could not save bookmarks.",
+      error
+    );
+  }
+}
+
+
+/**
+ * Checks whether one resource is bookmarked.
+ *
+ * @param {number} resourceId
+ * @returns {boolean}
+ */
+function isResourceBookmarked(resourceId) {
+  return bookmarkedResourceIds.has(resourceId);
+}
+
+
+/**
  * Normalizes text for searching.
  *
  * @param {string} value
@@ -191,7 +293,9 @@ function resourceMatchesSearch(resource) {
   }
 
   return createResourceSearchText(resource).includes(
-    normalizeSearchText(resourceState.searchTerm)
+    normalizeSearchText(
+      resourceState.searchTerm
+    )
   );
 }
 
@@ -217,8 +321,8 @@ function resourceMatchesFilter(
 /**
  * Checks the resource-language filter.
  *
- * Selecting English or Arabic also includes resources
- * marked as bilingual.
+ * Selecting English or Arabic also includes
+ * bilingual resources.
  *
  * @param {object} resource
  * @returns {boolean}
@@ -236,6 +340,21 @@ function resourceMatchesLanguage(resource) {
     resource.language === resourceState.language ||
     resource.language === "bilingual"
   );
+}
+
+
+/**
+ * Checks the bookmarked-only filter.
+ *
+ * @param {object} resource
+ * @returns {boolean}
+ */
+function resourceMatchesBookmarkFilter(resource) {
+  if (!resourceState.bookmarkedOnly) {
+    return true;
+  }
+
+  return isResourceBookmarked(resource.id);
 }
 
 
@@ -261,7 +380,8 @@ function filterResources() {
           resource.type,
           resourceState.type
         ) &&
-        resourceMatchesLanguage(resource)
+        resourceMatchesLanguage(resource) &&
+        resourceMatchesBookmarkFilter(resource)
       );
     }
   );
@@ -343,7 +463,8 @@ function createResourceElement(
   className = "",
   text = ""
 ) {
-  const element = document.createElement(tagName);
+  const element =
+    document.createElement(tagName);
 
   if (className) {
     element.className = className;
@@ -368,13 +489,11 @@ function createResourceBadge(
   translationKey,
   modifierClass = ""
 ) {
-  const badge = createResourceElement(
+  return createResourceElement(
     "span",
     `badge ${modifierClass}`.trim(),
     translateResourceText(translationKey)
   );
-
-  return badge;
 }
 
 
@@ -410,27 +529,227 @@ function createResourceDetail(label, value) {
 
 
 /**
- * Announces that a placeholder resource has no final URL.
+ * Announces a message below the resource library.
  *
- * @param {string} resourceTitle
+ * @param {string} translationKey
+ * @param {object} values
  */
-function announceUnavailableResource(resourceTitle) {
+function announceResourceAction(
+  translationKey,
+  values = {}
+) {
   const template = translateResourceText(
-    "resources.linkUnavailable"
+    translationKey
   );
 
   resourceElements.actionMessage.textContent =
-    formatResourceMessage(template, {
+    formatResourceMessage(
+      template,
+      values
+    );
+}
+
+
+/**
+ * Updates one bookmark button to match its state.
+ *
+ * @param {HTMLButtonElement} button
+ * @param {object} resource
+ */
+function updateBookmarkButton(button, resource) {
+  const language =
+    getResourceInterfaceLanguage();
+
+  const resourceTitle =
+    getLocalizedResourceValue(
+      resource.title,
+      language
+    );
+
+  const bookmarked =
+    isResourceBookmarked(resource.id);
+
+  const icon = button.querySelector(
+    "[data-bookmark-icon]"
+  );
+
+  const label = button.querySelector(
+    "[data-bookmark-text]"
+  );
+
+  const ariaLabelTemplate =
+    translateResourceText(
+      bookmarked
+        ? "resources.removeBookmarkLabel"
+        : "resources.addBookmarkLabel"
+    );
+
+  button.setAttribute(
+    "aria-pressed",
+    String(bookmarked)
+  );
+
+  button.setAttribute(
+    "aria-label",
+    formatResourceMessage(
+      ariaLabelTemplate,
+      {
+        title: resourceTitle
+      }
+    )
+  );
+
+  if (icon) {
+    icon.textContent =
+      bookmarked ? "★" : "☆";
+  }
+
+  if (label) {
+    label.textContent =
+      translateResourceText(
+        bookmarked
+          ? "resources.bookmarked"
+          : "resources.bookmark"
+      );
+  }
+}
+
+
+/**
+ * Toggles one bookmark.
+ *
+ * @param {object} resource
+ * @param {HTMLButtonElement} button
+ */
+function toggleResourceBookmark(
+  resource,
+  button
+) {
+  const wasBookmarked =
+    isResourceBookmarked(resource.id);
+
+  if (wasBookmarked) {
+    bookmarkedResourceIds.delete(
+      resource.id
+    );
+  } else {
+    bookmarkedResourceIds.add(
+      resource.id
+    );
+  }
+
+  saveBookmarks();
+
+  const isNowBookmarked =
+    isResourceBookmarked(resource.id);
+
+  const language =
+    getResourceInterfaceLanguage();
+
+  const resourceTitle =
+    getLocalizedResourceValue(
+      resource.title,
+      language
+    );
+
+  if (
+    resourceState.bookmarkedOnly &&
+    !isNowBookmarked
+  ) {
+    renderResources();
+
+    resourceElements.bookmarkedOnly.focus();
+  } else {
+    updateBookmarkButton(
+      button,
+      resource
+    );
+  }
+
+  announceResourceAction(
+    isNowBookmarked
+      ? "resources.bookmarkAdded"
+      : "resources.bookmarkRemoved",
+    {
       title: resourceTitle
-    });
+    }
+  );
+}
+
+
+/**
+ * Creates a bookmark button.
+ *
+ * @param {object} resource
+ * @returns {HTMLButtonElement}
+ */
+function createBookmarkButton(resource) {
+  const button = createResourceElement(
+    "button",
+    "bookmark-button"
+  );
+
+  button.type = "button";
+
+  const icon = createResourceElement(
+    "span",
+    "bookmark-button__icon"
+  );
+
+  icon.dataset.bookmarkIcon = "";
+  icon.setAttribute(
+    "aria-hidden",
+    "true"
+  );
+
+  const text = createResourceElement(
+    "span",
+    "bookmark-button__text"
+  );
+
+  text.dataset.bookmarkText = "";
+
+  button.append(icon, text);
+
+  updateBookmarkButton(
+    button,
+    resource
+  );
+
+  button.addEventListener(
+    "click",
+    function () {
+      toggleResourceBookmark(
+        resource,
+        button
+      );
+    }
+  );
+
+  return button;
+}
+
+
+/**
+ * Announces that a placeholder resource
+ * has no final URL.
+ *
+ * @param {string} resourceTitle
+ */
+function announceUnavailableResource(
+  resourceTitle
+) {
+  announceResourceAction(
+    "resources.linkUnavailable",
+    {
+      title: resourceTitle
+    }
+  );
 }
 
 
 /**
  * Creates the resource action.
- *
- * When a final URL exists, this function creates a link.
- * Otherwise it creates a demonstration button.
  *
  * @param {object} resource
  * @param {string} resourceTitle
@@ -469,7 +788,9 @@ function createResourceAction(
   button.addEventListener(
     "click",
     function () {
-      announceUnavailableResource(resourceTitle);
+      announceUnavailableResource(
+        resourceTitle
+      );
     }
   );
 
@@ -504,7 +825,13 @@ function createResourceCard(resource) {
     "card resource-card resource-library-card"
   );
 
-  card.dataset.resourceId = String(resource.id);
+  card.dataset.resourceId =
+    String(resource.id);
+
+  const cardTop = createResourceElement(
+    "div",
+    "resource-card__top"
+  );
 
   const icon = createResourceElement(
     "div",
@@ -512,7 +839,18 @@ function createResourceCard(resource) {
     resource.icon
   );
 
-  icon.setAttribute("aria-hidden", "true");
+  icon.setAttribute(
+    "aria-hidden",
+    "true"
+  );
+
+  const bookmarkButton =
+    createBookmarkButton(resource);
+
+  cardTop.append(
+    icon,
+    bookmarkButton
+  );
 
   const badges = createResourceElement(
     "div",
@@ -526,7 +864,9 @@ function createResourceCard(resource) {
       ]
     ),
     createResourceBadge(
-      TYPE_TRANSLATION_KEYS[resource.type],
+      TYPE_TRANSLATION_KEYS[
+        resource.type
+      ],
       "badge--accent"
     )
   );
@@ -553,12 +893,13 @@ function createResourceCard(resource) {
       "resources.durationValue"
     );
 
-  const durationValue = formatResourceMessage(
-    durationTemplate,
-    {
-      count: resource.duration
-    }
-  );
+  const durationValue =
+    formatResourceMessage(
+      durationTemplate,
+      {
+        count: resource.duration
+      }
+    );
 
   details.append(
     createResourceDetail(
@@ -605,7 +946,7 @@ function createResourceCard(resource) {
   );
 
   card.append(
-    icon,
+    cardTop,
     badges,
     title,
     description,
@@ -623,46 +964,90 @@ function createResourceCard(resource) {
  * @param {number} count
  */
 function updateResourceCount(count) {
-  const template = translateResourceText(
-    "resources.resultsCount"
-  );
+  const template =
+    translateResourceText(
+      "resources.resultsCount"
+    );
 
   resourceElements.count.textContent =
-    formatResourceMessage(template, {
-      count
-    });
+    formatResourceMessage(
+      template,
+      {
+        count
+      }
+    );
 }
 
 
 /**
- * Renders the current filtered and sorted resources.
+ * Updates the correct empty-state text.
+ */
+function updateNoResultsMessage() {
+  const titleKey =
+    resourceState.bookmarkedOnly
+      ? "resources.noBookmarksTitle"
+      : "resources.noResultsTitle";
+
+  const descriptionKey =
+    resourceState.bookmarkedOnly
+      ? "resources.noBookmarksDescription"
+      : "resources.noResultsDescription";
+
+  resourceElements.noResultsTitle.dataset.i18n =
+    titleKey;
+
+  resourceElements.noResultsDescription.dataset.i18n =
+    descriptionKey;
+
+  resourceElements.noResultsTitle.textContent =
+    translateResourceText(titleKey);
+
+  resourceElements.noResultsDescription.textContent =
+    translateResourceText(descriptionKey);
+}
+
+
+/**
+ * Renders the filtered and sorted resources.
  */
 function renderResources() {
-  const matchingResources = sortResources(
-    filterResources()
-  );
+  const matchingResources =
+    sortResources(
+      filterResources()
+    );
 
   resourceElements.library.replaceChildren();
-  resourceElements.actionMessage.textContent = "";
 
-  updateResourceCount(matchingResources.length);
+  resourceElements.actionMessage.textContent =
+    "";
+
+  updateResourceCount(
+    matchingResources.length
+  );
+
+  updateNoResultsMessage();
 
   const hasResults =
     matchingResources.length > 0;
 
-  resourceElements.library.hidden = !hasResults;
-  resourceElements.noResults.hidden = hasResults;
+  resourceElements.library.hidden =
+    !hasResults;
 
-  matchingResources.forEach(function (resource) {
-    resourceElements.library.append(
-      createResourceCard(resource)
-    );
-  });
+  resourceElements.noResults.hidden =
+    hasResults;
+
+  matchingResources.forEach(
+    function (resource) {
+      resourceElements.library.append(
+        createResourceCard(resource)
+      );
+    }
+  );
 }
 
 
 /**
- * Copies the form values into the resource state.
+ * Copies form values into resource state.
  */
 function updateResourceStateFromControls() {
   resourceState.searchTerm =
@@ -682,11 +1067,16 @@ function updateResourceStateFromControls() {
 
   resourceState.sort =
     resourceElements.sort.value;
+
+  resourceState.bookmarkedOnly =
+    resourceElements.bookmarkedOnly.checked;
 }
 
 
 /**
  * Resets filters and sorting.
+ *
+ * Bookmarks themselves are not deleted.
  */
 function resetResourceFilters() {
   resourceElements.form.reset();
@@ -697,6 +1087,7 @@ function resetResourceFilters() {
   resourceState.type = "all";
   resourceState.language = "all";
   resourceState.sort = "title-asc";
+  resourceState.bookmarkedOnly = false;
 
   renderResources();
 
@@ -728,7 +1119,8 @@ function bindResourceEvents() {
     resourceElements.difficulty,
     resourceElements.type,
     resourceElements.language,
-    resourceElements.sort
+    resourceElements.sort,
+    resourceElements.bookmarkedOnly
   ].forEach(function (control) {
     control.addEventListener(
       "change",
@@ -798,6 +1190,11 @@ function cacheResourceElements() {
       "[data-resource-sort]"
     );
 
+  resourceElements.bookmarkedOnly =
+    document.querySelector(
+      "[data-bookmarked-only]"
+    );
+
   resourceElements.library =
     document.querySelector(
       "[data-resource-library]"
@@ -811,6 +1208,16 @@ function cacheResourceElements() {
   resourceElements.noResults =
     document.querySelector(
       "[data-no-resources]"
+    );
+
+  resourceElements.noResultsTitle =
+    document.querySelector(
+      "[data-no-results-title]"
+    );
+
+  resourceElements.noResultsDescription =
+    document.querySelector(
+      "[data-no-results-description]"
     );
 
   resourceElements.actionMessage =
@@ -831,9 +1238,12 @@ function cacheResourceElements() {
     resourceElements.type &&
     resourceElements.language &&
     resourceElements.sort &&
+    resourceElements.bookmarkedOnly &&
     resourceElements.library &&
     resourceElements.count &&
     resourceElements.noResults &&
+    resourceElements.noResultsTitle &&
+    resourceElements.noResultsDescription &&
     resourceElements.actionMessage
   );
 }
@@ -847,8 +1257,13 @@ function initializeResourceLibrary() {
     return;
   }
 
+  bookmarkedResourceIds =
+    loadBookmarks();
+
   bindResourceEvents();
+
   updateResourceStateFromControls();
+
   renderResources();
 }
 

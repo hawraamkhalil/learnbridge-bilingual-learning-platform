@@ -283,7 +283,26 @@ const translations = {
       viewResource: "View resource",
 
       linkUnavailable:
-        "A final link has not been added for “{title}” yet."
+        "A final link has not been added for “{title}” yet.",
+
+      bookmarkFilterLabel: "Bookmarks",
+      bookmarkedOnly: "Show bookmarked only",
+      bookmark: "Save",
+      bookmarked: "Saved",
+
+      addBookmarkLabel:
+        "Save “{title}” to bookmarks",
+      removeBookmarkLabel:
+        "Remove “{title}” from bookmarks",
+      bookmarkAdded:
+        "“{title}” was saved to your bookmarks.",
+      bookmarkRemoved:
+        "“{title}” was removed from your bookmarks.",
+
+      noBookmarksTitle:
+        "No bookmarked resources yet",
+      noBookmarksDescription:
+        "Save a resource using its bookmark button and it will appear here."
     },
 
     about: {
@@ -586,7 +605,26 @@ const translations = {
       viewResource: "عرض المصدر",
 
       linkUnavailable:
-        "لم تتم إضافة الرابط النهائي للمصدر «{title}» بعد."
+        "لم تتم إضافة الرابط النهائي للمصدر «{title}» بعد.",
+
+        bookmarkFilterLabel: "الإشارات المرجعية",
+        bookmarkedOnly: "عرض المصادر المحفوظة فقط",
+        bookmark: "حفظ",
+        bookmarked: "محفوظ",
+
+        addBookmarkLabel:
+          "حفظ «{title}» في الإشارات المرجعية",
+        removeBookmarkLabel:
+          "إزالة «{title}» من الإشارات المرجعية",
+        bookmarkAdded:
+          "تم حفظ «{title}» في الإشارات المرجعية.",
+        bookmarkRemoved:
+          "تمت إزالة «{title}» من الإشارات المرجعية.",
+
+        noBookmarksTitle:
+          "لا توجد مصادر محفوظة بعد",
+        noBookmarksDescription:
+          "احفظ أحد المصادر باستخدام زر الإشارة المرجعية وسيظهر هنا."
     },
 
     about: {
