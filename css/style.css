@@ -2498,7 +2498,52 @@ html[dir="rtl"] .about-philosophy-steps li {
 }
 
 /* =========================================================
-   19. Reduced-motion preference
+   19. Shared JavaScript enhancement states
+   ========================================================= */
+
+.js-enabled .back-to-top {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+
+  transform: translateY(0.75rem);
+
+  transition:
+    opacity var(--transition-fast),
+    visibility var(--transition-fast),
+    transform var(--transition-fast),
+    background-color var(--transition-fast),
+    color var(--transition-fast);
+}
+
+.js-enabled .back-to-top.is-visible {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+
+  transform: translateY(0);
+}
+
+.js-enabled .back-to-top.is-visible:hover {
+  transform: translateY(-2px);
+}
+
+[data-newsletter-message] {
+  min-block-size: 1.5em;
+}
+
+[data-newsletter-message][data-state="error"] {
+  color: var(--color-error);
+  font-weight: 600;
+}
+
+[data-newsletter-message][data-state="success"] {
+  color: var(--color-success);
+  font-weight: 600;
+}
+
+/* =========================================================
+   20. Reduced-motion preference
    ========================================================= */
 
 @media (prefers-reduced-motion: reduce) {

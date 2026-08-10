@@ -36,8 +36,13 @@ const translations = {
       switchToEnglish: "Switch language to English",
 
       darkMode: "Dark mode",
+      lightMode: "Light mode",
+
       switchToDarkMode: "Switch to dark mode",
       switchToLightMode: "Switch to light mode",
+
+      whatsappPrefilledMessage:
+        "Hello, I would like to ask about the educational resources available on LearnBridge.",
 
       whatsapp: "WhatsApp",
       explore: "Explore",
@@ -155,6 +160,10 @@ const translations = {
       subscribeButton: "Subscribe",
       newsletterNote:
         "This demonstration form does not send or store your email yet.",
+      newsletterInvalid:
+        "Please enter a valid email address.",
+      newsletterSuccess:
+        "Your email is valid. This is a demonstration, so it was not subscribed or stored.",
 
       whatsappEyebrow: "Need help?",
       whatsappTitle:
@@ -642,8 +651,13 @@ const translations = {
       switchToEnglish: "التبديل إلى اللغة الإنجليزية",
 
       darkMode: "الوضع الداكن",
+      lightMode: "الوضع الفاتح",
+
       switchToDarkMode: "التبديل إلى الوضع الداكن",
       switchToLightMode: "التبديل إلى الوضع الفاتح",
+
+whatsappPrefilledMessage:
+  "مرحباً، أود الاستفسار عن المصادر التعليمية المتوفرة على منصة LearnBridge.",
 
       whatsapp: "واتساب",
       explore: "استكشف",
@@ -761,6 +775,10 @@ const translations = {
       subscribeButton: "اشتراك",
       newsletterNote:
         "هذا النموذج التجريبي لا يرسل بريدك الإلكتروني ولا يخزّنه حالياً.",
+      newsletterInvalid:
+        "يرجى إدخال بريد إلكتروني صالح.",
+      newsletterSuccess:
+        "البريد الإلكتروني صالح. هذا نموذج تجريبي، لذلك لم يتم الاشتراك أو حفظ البريد.",
 
       whatsappEyebrow: "هل تحتاج إلى مساعدة؟",
       whatsappTitle:
