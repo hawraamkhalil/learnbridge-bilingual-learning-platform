@@ -1853,9 +1853,332 @@ html[dir="rtl"] .text-link::after {
 
   accent-color: var(--color-primary);
 }
+/* =========================================================
+   17. About page
+   ========================================================= */
+
+.about-introduction-actions {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: var(--space-3);
+
+  margin-block-start: var(--space-6);
+}
+
+.about-story-grid {
+  display: grid;
+  gap: var(--space-8);
+  align-items: start;
+}
+
+.about-story-content {
+  max-inline-size: var(--content-width);
+}
+
+.about-story-content p:not(.eyebrow) {
+  color: var(--color-text-muted);
+}
+
+.about-story-note {
+  padding: var(--space-6);
+
+  border: 1px solid var(--color-border);
+  border-inline-start: 0.35rem solid var(--color-primary);
+  border-radius: var(--radius-large);
+
+  background-color: var(--color-surface);
+  box-shadow: var(--shadow-card);
+}
+
+.about-story-note__icon,
+.about-card-icon {
+  display: inline-grid;
+  place-items: center;
+
+  min-inline-size: 3.25rem;
+  block-size: 3.25rem;
+  padding-inline: var(--space-3);
+
+  margin-block-end: var(--space-5);
+
+  border-radius: var(--radius-medium);
+  background-color: var(--color-primary-soft);
+  color: var(--color-primary-hover);
+
+  font-size: var(--font-size-small);
+  font-weight: 700;
+
+  direction: ltr;
+  unicode-bidi: isolate;
+}
+
+.about-purpose-list,
+.about-bilingual-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+
+  padding-inline-start: 1.25rem;
+  margin-block: var(--space-5) 0;
+}
+
+.about-purpose-list li,
+.about-bilingual-list li {
+  color: var(--color-text-muted);
+}
+
+.about-purpose-list li::marker,
+.about-bilingual-list li::marker {
+  color: var(--color-primary);
+}
+
+.about-mission-grid,
+.about-audience-grid,
+.about-values-grid,
+.about-benefits-grid {
+  display: grid;
+  gap: var(--space-6);
+}
+
+.about-mission-card,
+.about-audience-card,
+.about-value-card,
+.about-benefit-card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.about-mission-card p,
+.about-audience-card p,
+.about-value-card p,
+.about-benefit-card p {
+  color: var(--color-text-muted);
+}
+
+.about-value-number {
+  display: inline-block;
+
+  margin-block-end: var(--space-5);
+
+  color: var(--color-primary);
+
+  font-size: 1.75rem;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.about-philosophy-panel {
+  display: grid;
+  gap: var(--space-8);
+
+  padding: var(--space-6);
+
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-extra-large);
+
+  background:
+    linear-gradient(
+      135deg,
+      var(--color-primary-soft),
+      var(--color-surface)
+    );
+
+  box-shadow: var(--shadow-card);
+}
+
+.about-philosophy-copy p:not(.eyebrow) {
+  color: var(--color-text-muted);
+}
+
+.about-philosophy-steps {
+  display: grid;
+  gap: var(--space-4);
+
+  padding: 0;
+  margin: 0;
+
+  list-style: none;
+  counter-reset: philosophy-step;
+}
+
+.about-philosophy-steps li {
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+
+  padding:
+    var(--space-5)
+    var(--space-5)
+    var(--space-5)
+    var(--space-16);
+
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-medium);
+
+  background-color: var(--color-surface);
+  box-shadow: var(--shadow-small);
+
+  counter-increment: philosophy-step;
+}
+
+.about-philosophy-steps li::before {
+  content: counter(philosophy-step);
+
+  position: absolute;
+
+  inset-block-start: var(--space-5);
+  inset-inline-start: var(--space-5);
+
+  display: inline-grid;
+  place-items: center;
+
+  inline-size: 2rem;
+  block-size: 2rem;
+
+  border-radius: var(--radius-pill);
+  background-color: var(--color-primary);
+  color: var(--color-primary-text);
+
+  font-size: var(--font-size-small);
+  font-weight: 700;
+}
+
+html[dir="rtl"] .about-philosophy-steps li {
+  padding:
+    var(--space-5)
+    var(--space-16)
+    var(--space-5)
+    var(--space-5);
+}
+
+.about-philosophy-steps span {
+  color: var(--color-text-muted);
+}
+
+.about-bilingual-grid {
+  display: grid;
+  gap: var(--space-10);
+  align-items: center;
+}
+
+.about-language-visual {
+  position: relative;
+
+  min-block-size: 19rem;
+  padding: var(--space-6);
+
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-extra-large);
+
+  background:
+    radial-gradient(
+      circle at 20% 20%,
+      var(--color-primary-soft),
+      transparent 45%
+    ),
+    radial-gradient(
+      circle at 80% 80%,
+      var(--color-accent-soft),
+      transparent 45%
+    ),
+    var(--color-surface);
+
+  box-shadow: var(--shadow-card);
+}
+
+.about-language-card {
+  position: absolute;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  inline-size: min(11rem, 44%);
+  aspect-ratio: 0.82;
+
+  padding: var(--space-5);
+
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-large);
+
+  background-color: var(--color-surface-elevated);
+  box-shadow: var(--shadow-card);
+}
+
+.about-language-card span {
+  color: var(--color-primary);
+  font-size: var(--font-size-small);
+  font-weight: 700;
+}
+
+.about-language-card strong {
+  color: var(--color-heading);
+  font-size: clamp(1.5rem, 5vw, 2.25rem);
+}
+
+.about-language-card--en {
+  inset-block-start: 12%;
+  inset-inline-start: 14%;
+
+  direction: ltr;
+}
+
+.about-language-card--ar {
+  inset-block-end: 12%;
+  inset-inline-end: 14%;
+
+  direction: rtl;
+}
+
+.about-bilingual-copy p:not(.eyebrow) {
+  color: var(--color-text-muted);
+}
+
+.about-cta-section {
+  padding-block-start: 0;
+}
+
+.about-cta-panel {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-6);
+
+  padding: var(--space-6);
+
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-extra-large);
+
+  background:
+    linear-gradient(
+      135deg,
+      var(--color-primary-soft),
+      var(--color-surface)
+    );
+
+  box-shadow: var(--shadow-card);
+}
+
+.about-cta-panel p:not(.eyebrow) {
+  max-inline-size: 46rem;
+  color: var(--color-text-muted);
+}
+
+.about-cta-actions {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: var(--space-3);
+
+  inline-size: 100%;
+}
 
 /* =========================================================
-   17. Reduced-motion preference
+   18. Reduced-motion preference
    ========================================================= */
 
 @media (prefers-reduced-motion: reduce) {

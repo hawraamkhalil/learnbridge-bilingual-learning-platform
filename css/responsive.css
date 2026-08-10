@@ -302,3 +302,89 @@
     grid-column: span 2;
   }
 }
+
+/* =========================================================
+   About page: large mobile phones
+   ========================================================= */
+
+@media (min-width: 481px) {
+  .about-introduction-actions,
+  .about-cta-actions {
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+
+  .about-mission-grid,
+  .about-audience-grid,
+  .about-values-grid,
+  .about-benefits-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+
+/* =========================================================
+   About page: tablets and small laptops
+   ========================================================= */
+
+@media (min-width: 769px) {
+  .about-story-grid {
+    grid-template-columns:
+      minmax(0, 1.15fr)
+      minmax(18rem, 0.85fr);
+
+    gap: var(--space-12);
+  }
+
+  .about-philosophy-panel {
+    grid-template-columns:
+      minmax(0, 1fr)
+      minmax(18rem, 0.9fr);
+
+    align-items: center;
+
+    padding: var(--space-8);
+  }
+
+  .about-bilingual-grid {
+    grid-template-columns:
+      minmax(18rem, 0.85fr)
+      minmax(0, 1.15fr);
+  }
+
+  .about-cta-panel {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: var(--space-8);
+  }
+
+  .about-cta-actions {
+    flex: none;
+    inline-size: auto;
+  }
+}
+
+
+/* =========================================================
+   About page: desktop monitors
+   ========================================================= */
+
+@media (min-width: 1025px) {
+  .about-audience-grid,
+  .about-values-grid,
+  .about-benefits-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  .about-philosophy-panel,
+  .about-cta-panel {
+    padding: var(--space-10);
+  }
+
+  .about-language-visual {
+    min-block-size: 23rem;
+  }
+}

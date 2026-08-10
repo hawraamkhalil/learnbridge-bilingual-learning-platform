@@ -306,12 +306,194 @@ const translations = {
     },
 
     about: {
-      eyebrow: "About the platform",
-      placeholderTitle:
-        "Learning should be clear and accessible",
-      placeholderDescription:
-        "The mission, vision, platform story, values, learning philosophy, learner benefits, and bilingual-support explanation will be added in Phase 9.",
-      contactButton: "Contact LearnBridge"
+      eyebrow: "About LearnBridge",
+
+      title:
+        "Making educational resources easier to discover and understand",
+
+      description:
+        "LearnBridge is designed to help learners explore useful educational resources through a clear, organized, bilingual, and accessible experience.",
+
+      exploreResourcesButton: "Explore resources",
+      contactButton: "Contact LearnBridge",
+
+      storyEyebrow: "Our story",
+
+      storyTitle:
+        "Learning resources are everywhere. Finding the right one should not be difficult.",
+
+      storyParagraphOne:
+        "Learners often move between websites, videos, tutorials, and courses while trying to decide which resource matches their level and goals.",
+
+      storyParagraphTwo:
+        "LearnBridge was planned as a simple educational platform that organizes resources by subject, level, format, language, and learning time so learners can make clearer choices.",
+
+      purposeTitle:
+        "What LearnBridge is designed to do",
+
+      purposeDiscover:
+        "Help learners discover relevant resources.",
+
+      purposeOrganize:
+        "Organize learning choices without unnecessary complexity.",
+
+      purposeBilingual:
+        "Support both English and Arabic learning experiences.",
+
+      directionEyebrow: "Our direction",
+      directionTitle: "Mission and vision",
+
+      directionDescription:
+        "LearnBridge focuses on clarity, accessibility, organization, and practical learning.",
+
+      missionTitle: "Mission",
+
+      missionDescription:
+        "Help learners find understandable and relevant educational resources through an organized, responsive, and bilingual platform.",
+
+      visionTitle: "Vision",
+
+      visionDescription:
+        "Create a learning experience where language, device, and information overload are less likely to become barriers to education.",
+
+      audienceEyebrow: "Who it is for",
+
+      audienceTitle:
+        "LearnBridge is designed for different kinds of learners",
+
+      audienceDescription:
+        "The platform is intended for learners who want a clearer way to find useful educational material.",
+
+      audienceStudentsTitle: "Students",
+
+      audienceStudentsDescription:
+        "Learners building academic and technical foundations alongside their studies.",
+
+      audienceSelfLearnersTitle:
+        "Self-directed learners",
+
+      audienceSelfLearnersDescription:
+        "People learning independently through online resources and practical exercises.",
+
+      audienceBeginnersTitle:
+        "Beginners and career changers",
+
+      audienceBeginnersDescription:
+        "Learners who need clear starting points before moving into more advanced material.",
+
+      audienceBilingualTitle:
+        "English and Arabic learners",
+
+      audienceBilingualDescription:
+        "Learners who benefit from navigating educational content in either English or Arabic.",
+
+      valuesEyebrow: "What guides the platform",
+      valuesTitle: "Core values",
+
+      valuesDescription:
+        "These principles guide how LearnBridge content and interfaces are organized.",
+
+      valueClarityTitle: "Clarity",
+
+      valueClarityDescription:
+        "Information should be understandable, organized, and easy to scan.",
+
+      valueAccessibilityTitle: "Accessibility",
+
+      valueAccessibilityDescription:
+        "Learning interfaces should work for different devices, interaction methods, and language directions.",
+
+      valuePracticalityTitle: "Practicality",
+
+      valuePracticalityDescription:
+        "Resources should help learners take useful next steps rather than only consume information.",
+
+      valueRespectTitle:
+        "Respect for the learner",
+
+      valueRespectDescription:
+        "The interface should reduce unnecessary complexity and allow learners to make their own informed choices.",
+
+      philosophyEyebrow: "Learning philosophy",
+
+      philosophyTitle:
+        "Good learning starts with the right next step",
+
+      philosophyDescription:
+        "LearnBridge does not try to overwhelm learners with every possible resource. The goal is to help them identify useful material, understand what it offers, and continue learning deliberately.",
+
+      philosophyDiscoverTitle: "Discover",
+
+      philosophyDiscoverDescription:
+        "Find a subject or resource relevant to your goal.",
+
+      philosophyChooseTitle: "Choose",
+
+      philosophyChooseDescription:
+        "Compare level, type, language, and learning time.",
+
+      philosophyContinueTitle: "Continue",
+
+      philosophyContinueDescription:
+        "Save useful material and return when you are ready.",
+
+      bilingualEyebrow: "English and Arabic",
+
+      bilingualTitle:
+        "Why LearnBridge supports two languages",
+
+      bilingualParagraphOne:
+        "Many technical and educational resources are available in English, while some learners understand difficult concepts more comfortably in Arabic.",
+
+      bilingualParagraphTwo:
+        "LearnBridge therefore treats bilingual support as part of the interface architecture rather than as an automatic translation added after the website is finished.",
+
+      bilingualBenefitTranslation:
+        "Human-written English and Arabic interface text.",
+
+      bilingualBenefitDirection:
+        "Correct LTR and RTL document direction.",
+
+      bilingualBenefitPersistence:
+        "Saved language preference across pages.",
+
+      benefitsEyebrow: "Benefits for learners",
+
+      benefitsTitle:
+        "A learning library designed to reduce friction",
+
+      benefitDiscoveryTitle: "Easier discovery",
+
+      benefitDiscoveryDescription:
+        "Search and filters narrow a large collection into more useful choices.",
+
+      benefitDecisionTitle: "Better decisions",
+
+      benefitDecisionDescription:
+        "Difficulty, format, language, and learning-time information help learners compare resources.",
+
+      benefitBookmarksTitle: "Saved learning",
+
+      benefitBookmarksDescription:
+        "Bookmarks let learners keep useful resources available for later.",
+
+      benefitResponsiveTitle: "Flexible access",
+
+      benefitResponsiveDescription:
+        "Responsive layouts make the platform usable across phones, tablets, laptops, and desktops.",
+
+      ctaEyebrow: "Start exploring",
+
+      ctaTitle:
+        "Find a useful resource for your next learning goal",
+
+      ctaDescription:
+        "Browse the resource library or contact LearnBridge if you need help finding a suitable starting point.",
+
+      ctaResourcesButton: "Browse resources",
+
+      ctaWhatsAppButton:
+        "Contact through WhatsApp"
     },
 
     contact: {
@@ -628,12 +810,193 @@ const translations = {
     },
 
     about: {
-      eyebrow: "عن المنصة",
-      placeholderTitle:
-        "يجب أن يكون التعلّم واضحاً وسهل الوصول",
-      placeholderDescription:
-        "ستتم إضافة الرسالة والرؤية وقصة المنصة والقيم وفلسفة التعلّم وفوائد المتعلمين وشرح دعم اللغتين في المرحلة 9.",
-      contactButton: "تواصل مع LearnBridge"
+      eyebrow: "عن LearnBridge",
+
+      title:
+        "تسهيل اكتشاف المصادر التعليمية وفهمها",
+
+      description:
+        "صُممت LearnBridge لمساعدة المتعلمين على استكشاف مصادر تعليمية مفيدة من خلال تجربة واضحة ومنظمة وثنائية اللغة وسهلة الوصول.",
+
+      exploreResourcesButton: "استكشف المصادر",
+      contactButton: "تواصل مع LearnBridge",
+
+      storyEyebrow: "قصتنا",
+
+      storyTitle:
+        "المصادر التعليمية موجودة في كل مكان، لكن العثور على المصدر المناسب لا يجب أن يكون صعباً.",
+
+      storyParagraphOne:
+        "غالباً ما يتنقل المتعلمون بين المواقع والفيديوهات والدروس والدورات أثناء محاولتهم تحديد المصدر الذي يتناسب مع مستواهم وأهدافهم.",
+
+      storyParagraphTwo:
+        "خُططت LearnBridge كمنصة تعليمية بسيطة تنظّم المصادر حسب المجال والمستوى والنوع واللغة ومدة التعلّم، لتساعد المتعلمين على اتخاذ خيارات أكثر وضوحاً.",
+
+      purposeTitle:
+        "ما الذي صُممت LearnBridge لتحقيقه؟",
+
+      purposeDiscover:
+        "مساعدة المتعلمين على اكتشاف المصادر المناسبة.",
+
+      purposeOrganize:
+        "تنظيم خيارات التعلّم من دون تعقيد غير ضروري.",
+
+      purposeBilingual:
+        "دعم تجربة تعلّم باللغتين الإنجليزية والعربية.",
+
+      directionEyebrow: "توجهنا",
+      directionTitle: "الرسالة والرؤية",
+
+      directionDescription:
+        "تركّز LearnBridge على الوضوح وسهولة الوصول والتنظيم والتعلّم العملي.",
+
+      missionTitle: "الرسالة",
+
+      missionDescription:
+        "مساعدة المتعلمين على العثور على مصادر تعليمية واضحة وملائمة من خلال منصة منظمة ومتجاوبة وثنائية اللغة.",
+
+      visionTitle: "الرؤية",
+
+      visionDescription:
+        "إنشاء تجربة تعلّم تقل فيها احتمالية أن تصبح اللغة أو نوع الجهاز أو كثرة المعلومات عائقاً أمام التعليم.",
+
+      audienceEyebrow: "لمن صُممت المنصة؟",
+
+      audienceTitle:
+        "LearnBridge مصممة لأنواع مختلفة من المتعلمين",
+
+      audienceDescription:
+        "تستهدف المنصة المتعلمين الذين يريدون طريقة أكثر وضوحاً للوصول إلى مواد تعليمية مفيدة.",
+
+      audienceStudentsTitle: "الطلاب",
+
+      audienceStudentsDescription:
+        "المتعلمون الذين يبنون أسساً أكاديمية وتقنية إلى جانب دراستهم.",
+
+      audienceSelfLearnersTitle:
+        "المتعلمون بشكل ذاتي",
+
+      audienceSelfLearnersDescription:
+        "الأشخاص الذين يتعلمون بصورة مستقلة من خلال المصادر الإلكترونية والتمارين العملية.",
+
+      audienceBeginnersTitle:
+        "المبتدئون ومن يغيّرون مسارهم المهني",
+
+      audienceBeginnersDescription:
+        "المتعلمون الذين يحتاجون إلى نقاط بداية واضحة قبل الانتقال إلى محتوى أكثر تقدماً.",
+
+      audienceBilingualTitle:
+        "المتعلمون بالإنجليزية والعربية",
+
+      audienceBilingualDescription:
+        "المتعلمون الذين يستفيدون من تصفح المحتوى التعليمي باللغة الإنجليزية أو العربية.",
+
+      valuesEyebrow: "ما الذي يوجّه المنصة؟",
+      valuesTitle: "القيم الأساسية",
+
+      valuesDescription:
+        "توجّه هذه المبادئ طريقة تنظيم محتوى LearnBridge وواجهاتها.",
+
+      valueClarityTitle: "الوضوح",
+
+      valueClarityDescription:
+        "يجب أن تكون المعلومات مفهومة ومنظمة وسهلة التصفح.",
+
+      valueAccessibilityTitle: "سهولة الوصول",
+
+      valueAccessibilityDescription:
+        "يجب أن تعمل واجهات التعلّم عبر الأجهزة المختلفة وطرق التفاعل واتجاهات اللغة المختلفة.",
+
+      valuePracticalityTitle: "العملية",
+
+      valuePracticalityDescription:
+        "يجب أن تساعد المصادر المتعلم على اتخاذ خطوات مفيدة، لا أن تقتصر على استهلاك المعلومات.",
+
+      valueRespectTitle: "احترام المتعلم",
+
+      valueRespectDescription:
+        "يجب أن تقلل الواجهة من التعقيد غير الضروري وتمنح المتعلمين القدرة على اتخاذ خياراتهم بوعي.",
+
+      philosophyEyebrow: "فلسفة التعلّم",
+
+      philosophyTitle:
+        "التعلّم الجيد يبدأ بالخطوة التالية المناسبة",
+
+      philosophyDescription:
+        "لا تحاول LearnBridge إغراق المتعلم بكل المصادر الممكنة. الهدف هو مساعدته على تحديد المواد المفيدة وفهم ما تقدمه ومتابعة التعلّم بصورة واعية.",
+
+      philosophyDiscoverTitle: "اكتشف",
+
+      philosophyDiscoverDescription:
+        "اعثر على مجال أو مصدر مرتبط بهدفك.",
+
+      philosophyChooseTitle: "اختر",
+
+      philosophyChooseDescription:
+        "قارن المستوى والنوع واللغة ومدة التعلّم.",
+
+      philosophyContinueTitle: "تابع",
+
+      philosophyContinueDescription:
+        "احفظ المصادر المفيدة وعد إليها عندما تكون مستعداً.",
+
+      bilingualEyebrow: "الإنجليزية والعربية",
+
+      bilingualTitle:
+        "لماذا تدعم LearnBridge لغتين؟",
+
+      bilingualParagraphOne:
+        "تتوفر الكثير من المصادر التقنية والتعليمية باللغة الإنجليزية، بينما يجد بعض المتعلمين أن فهم المفاهيم الصعبة يكون أسهل باللغة العربية.",
+
+      bilingualParagraphTwo:
+        "لذلك تتعامل LearnBridge مع دعم اللغتين كجزء من بنية الواجهة، وليس كترجمة آلية تضاف بعد الانتهاء من الموقع.",
+
+      bilingualBenefitTranslation:
+        "نصوص واجهة مكتوبة مباشرة بالإنجليزية والعربية.",
+
+      bilingualBenefitDirection:
+        "دعم صحيح لاتجاهي LTR وRTL.",
+
+      bilingualBenefitPersistence:
+        "حفظ اللغة المختارة أثناء التنقل بين الصفحات.",
+
+      benefitsEyebrow: "فوائد للمتعلمين",
+
+      benefitsTitle:
+        "مكتبة تعليمية مصممة لتقليل العوائق",
+
+      benefitDiscoveryTitle: "اكتشاف أسهل",
+
+      benefitDiscoveryDescription:
+        "يساعد البحث والتصفية على تحويل مجموعة كبيرة من المصادر إلى خيارات أكثر فائدة.",
+
+      benefitDecisionTitle: "قرارات أفضل",
+
+      benefitDecisionDescription:
+        "تساعد معلومات المستوى والنوع واللغة ومدة التعلّم على مقارنة المصادر.",
+
+      benefitBookmarksTitle: "حفظ المصادر",
+
+      benefitBookmarksDescription:
+        "تتيح الإشارات المرجعية الاحتفاظ بالمصادر المفيدة للعودة إليها لاحقاً.",
+
+      benefitResponsiveTitle: "وصول مرن",
+
+      benefitResponsiveDescription:
+        "تجعل التخطيطات المتجاوبة المنصة قابلة للاستخدام على الهواتف والأجهزة اللوحية والحواسيب.",
+
+      ctaEyebrow: "ابدأ الاستكشاف",
+
+      ctaTitle:
+        "اعثر على مصدر مفيد لهدفك التعليمي التالي",
+
+      ctaDescription:
+        "تصفّح مكتبة المصادر أو تواصل مع LearnBridge إذا كنت تحتاج إلى المساعدة في اختيار نقطة بداية مناسبة.",
+
+      ctaResourcesButton: "تصفّح المصادر",
+
+      ctaWhatsAppButton:
+        "التواصل عبر واتساب"
     },
 
     contact: {
