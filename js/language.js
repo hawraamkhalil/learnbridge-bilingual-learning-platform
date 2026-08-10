@@ -192,9 +192,19 @@ const translations = {
 
     resourceLabels: {
       beginner: "Beginner",
+      intermediate: "Intermediate",
+      advanced: "Advanced",
+
+      article: "Article",
+      video: "Video",
       tutorial: "Tutorial",
       course: "Course",
-      article: "Article"
+      documentation: "Documentation",
+      exercise: "Exercise",
+
+      english: "English",
+      arabic: "Arabic",
+      bilingual: "English and Arabic"
     },
 
     featured: {
@@ -221,13 +231,59 @@ const translations = {
 
     resources: {
       eyebrow: "Resource library",
-      placeholderTitle: "Discover educational resources",
-      placeholderDescription:
-        "Search, filtering, sorting, dynamic resource cards, and bookmarks will be added in Phases 7 and 8.",
 
-      libraryPlaceholderTitle: "Resource library area",
-      libraryPlaceholderDescription:
-        "JavaScript will generate the resource cards inside this section from a reusable array of resource objects."
+      title:
+        "Find the right resource for your next learning goal",
+
+      description:
+        "Search and organize educational resources by subject, level, format, language, and estimated learning time.",
+
+      libraryEyebrow: "Explore and refine",
+      libraryTitle: "Educational resource library",
+
+      libraryDescription:
+        "Use one or several controls together to find resources matching your current needs.",
+
+      searchLabel: "Search resources",
+      searchPlaceholder: "Search by title or keyword",
+
+      categoryLabel: "Category",
+      allCategories: "All categories",
+
+      difficultyLabel: "Difficulty",
+      allDifficulties: "All levels",
+
+      typeLabel: "Resource type",
+      allTypes: "All types",
+
+      languageLabel: "Resource language",
+      allLanguages: "All languages",
+
+      sortLabel: "Sort resources",
+      sortTitleAscending: "Title: A to Z",
+      sortTitleDescending: "Title: Z to A",
+      sortDurationAscending: "Shortest first",
+      sortDurationDescending: "Longest first",
+
+      resetFilters: "Reset filters",
+
+      resultsCount: "{count} resources found",
+
+      noResultsTitle: "No matching resources",
+
+      noResultsDescription:
+        "Try a different search term or reset one or more filters.",
+
+      categoryMeta: "Category",
+      difficultyMeta: "Difficulty",
+      languageMeta: "Language",
+      durationMeta: "Learning time",
+
+      durationValue: "{count} minutes",
+      viewResource: "View resource",
+
+      linkUnavailable:
+        "A final link has not been added for “{title}” yet."
     },
 
     about: {
@@ -439,9 +495,19 @@ const translations = {
 
     resourceLabels: {
       beginner: "مبتدئ",
+      intermediate: "متوسط",
+      advanced: "متقدم",
+
+      article: "مقال",
+      video: "فيديو",
       tutorial: "درس تطبيقي",
       course: "دورة",
-      article: "مقال"
+      documentation: "توثيق",
+      exercise: "تمرين",
+
+      english: "الإنجليزية",
+      arabic: "العربية",
+      bilingual: "الإنجليزية والعربية"
     },
 
     featured: {
@@ -468,13 +534,59 @@ const translations = {
 
     resources: {
       eyebrow: "مكتبة المصادر",
-      placeholderTitle: "اكتشف المصادر التعليمية",
-      placeholderDescription:
-        "ستتم إضافة البحث والتصفية والترتيب وبطاقات المصادر الديناميكية والإشارات المرجعية في المرحلتين 7 و8.",
 
-      libraryPlaceholderTitle: "منطقة مكتبة المصادر",
-      libraryPlaceholderDescription:
-        "ستنشئ JavaScript بطاقات المصادر داخل هذا القسم بالاعتماد على مصفوفة قابلة لإعادة الاستخدام من كائنات المصادر."
+      title:
+        "اعثر على المصدر المناسب لهدفك التعليمي التالي",
+
+      description:
+        "ابحث عن المصادر التعليمية ونظّمها حسب المجال والمستوى والنوع واللغة ومدة التعلّم المقدّرة.",
+
+      libraryEyebrow: "استكشف وحدّد النتائج",
+      libraryTitle: "مكتبة المصادر التعليمية",
+
+      libraryDescription:
+        "استخدم أداة واحدة أو عدة أدوات معاً للوصول إلى المصادر التي تناسب احتياجاتك الحالية.",
+
+      searchLabel: "البحث في المصادر",
+      searchPlaceholder: "ابحث حسب العنوان أو الكلمة المفتاحية",
+
+      categoryLabel: "المجال",
+      allCategories: "جميع المجالات",
+
+      difficultyLabel: "المستوى",
+      allDifficulties: "جميع المستويات",
+
+      typeLabel: "نوع المصدر",
+      allTypes: "جميع الأنواع",
+
+      languageLabel: "لغة المصدر",
+      allLanguages: "جميع اللغات",
+
+      sortLabel: "ترتيب المصادر",
+      sortTitleAscending: "العنوان: تصاعدياً",
+      sortTitleDescending: "العنوان: تنازلياً",
+      sortDurationAscending: "الأقصر أولاً",
+      sortDurationDescending: "الأطول أولاً",
+
+      resetFilters: "إعادة ضبط عوامل التصفية",
+
+      resultsCount: "تم العثور على {count} مصدراً",
+
+      noResultsTitle: "لا توجد مصادر مطابقة",
+
+      noResultsDescription:
+        "جرّب عبارة بحث مختلفة أو أعد ضبط عامل واحد أو أكثر من عوامل التصفية.",
+
+      categoryMeta: "المجال",
+      difficultyMeta: "المستوى",
+      languageMeta: "اللغة",
+      durationMeta: "مدة التعلّم",
+
+      durationValue: "{count} دقيقة",
+      viewResource: "عرض المصدر",
+
+      linkUnavailable:
+        "لم تتم إضافة الرابط النهائي للمصدر «{title}» بعد."
     },
 
     about: {

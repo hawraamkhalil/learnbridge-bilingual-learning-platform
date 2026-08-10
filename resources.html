@@ -6,7 +6,7 @@
 
     <meta
       name="description"
-      content="Search, filter, sort, and bookmark bilingual educational resources on LearnBridge."
+      content="Search, filter, sort, and explore bilingual educational resources on LearnBridge."
     >
 
     <meta name="theme-color" content="#2563eb">
@@ -18,6 +18,7 @@
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Kufi+Arabic:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     >
+
     <title>LearnBridge | Educational Resources</title>
 
     <link rel="stylesheet" href="css/style.css">
@@ -29,7 +30,7 @@
     <script src="js/resources.js" defer></script>
   </head>
 
-  <body data-page="resources">
+  <body id="top" data-page="resources">
     <a
       class="skip-link"
       href="#main-content"
@@ -185,41 +186,395 @@
 
           <h1
             id="resources-page-title"
-            data-i18n="resources.placeholderTitle"
+            data-i18n="resources.title"
           >
-            Discover educational resources
+            Find the right resource for your next learning goal
           </h1>
 
-          <p data-i18n="resources.placeholderDescription">
-            Search, filtering, sorting, dynamic resource cards, and bookmarks
-            will be added in Phases 7 and 8.
+          <p data-i18n="resources.description">
+            Search and organize educational resources by subject, level,
+            format, language, and estimated learning time.
           </p>
         </div>
       </section>
 
       <section
+        id="resource-library"
         class="section"
-        aria-labelledby="resource-library-placeholder-title"
+        aria-labelledby="resource-library-title"
       >
         <div class="container">
-          <h2
-            id="resource-library-placeholder-title"
-            data-i18n="resources.libraryPlaceholderTitle"
-          >
-            Resource library area
-          </h2>
+          <div class="section-heading">
+            <p
+              class="eyebrow"
+              data-i18n="resources.libraryEyebrow"
+            >
+              Explore and refine
+            </p>
 
-          <p data-i18n="resources.libraryPlaceholderDescription">
-            JavaScript will generate the resource cards inside this section
-            from a reusable array of resource objects.
-          </p>
+            <h2
+              id="resource-library-title"
+              data-i18n="resources.libraryTitle"
+            >
+              Educational resource library
+            </h2>
+
+            <p data-i18n="resources.libraryDescription">
+              Use one or several controls together to find resources matching
+              your current needs.
+            </p>
+          </div>
+
+          <form
+            class="filter-panel"
+            data-resource-filters
+            role="search"
+          >
+            <div class="filter-grid">
+              <div class="form-field filter-field--search">
+                <label
+                  class="form-label"
+                  for="resource-search"
+                  data-i18n="resources.searchLabel"
+                >
+                  Search resources
+                </label>
+
+                <input
+                  id="resource-search"
+                  class="form-control"
+                  type="search"
+                  name="search"
+                  placeholder="Search by title or keyword"
+                  data-i18n-placeholder="resources.searchPlaceholder"
+                  autocomplete="off"
+                  data-resource-search
+                >
+              </div>
+
+              <div class="form-field">
+                <label
+                  class="form-label"
+                  for="category-filter"
+                  data-i18n="resources.categoryLabel"
+                >
+                  Category
+                </label>
+
+                <select
+                  id="category-filter"
+                  class="form-control"
+                  name="category"
+                  data-category-filter
+                >
+                  <option
+                    value="all"
+                    data-i18n="resources.allCategories"
+                  >
+                    All categories
+                  </option>
+
+                  <option
+                    value="web-development"
+                    data-i18n="categories.webDevelopment"
+                  >
+                    Web Development
+                  </option>
+
+                  <option
+                    value="programming"
+                    data-i18n="categories.programming"
+                  >
+                    Programming
+                  </option>
+
+                  <option
+                    value="data-science"
+                    data-i18n="categories.dataScience"
+                  >
+                    Data Science
+                  </option>
+
+                  <option
+                    value="artificial-intelligence"
+                    data-i18n="categories.artificialIntelligence"
+                  >
+                    Artificial Intelligence
+                  </option>
+
+                  <option
+                    value="mathematics"
+                    data-i18n="categories.mathematics"
+                  >
+                    Mathematics
+                  </option>
+
+                  <option
+                    value="career-development"
+                    data-i18n="categories.careerDevelopment"
+                  >
+                    Career Development
+                  </option>
+                </select>
+              </div>
+
+              <div class="form-field">
+                <label
+                  class="form-label"
+                  for="difficulty-filter"
+                  data-i18n="resources.difficultyLabel"
+                >
+                  Difficulty
+                </label>
+
+                <select
+                  id="difficulty-filter"
+                  class="form-control"
+                  name="difficulty"
+                  data-difficulty-filter
+                >
+                  <option
+                    value="all"
+                    data-i18n="resources.allDifficulties"
+                  >
+                    All levels
+                  </option>
+
+                  <option
+                    value="beginner"
+                    data-i18n="resourceLabels.beginner"
+                  >
+                    Beginner
+                  </option>
+
+                  <option
+                    value="intermediate"
+                    data-i18n="resourceLabels.intermediate"
+                  >
+                    Intermediate
+                  </option>
+
+                  <option
+                    value="advanced"
+                    data-i18n="resourceLabels.advanced"
+                  >
+                    Advanced
+                  </option>
+                </select>
+              </div>
+
+              <div class="form-field">
+                <label
+                  class="form-label"
+                  for="type-filter"
+                  data-i18n="resources.typeLabel"
+                >
+                  Resource type
+                </label>
+
+                <select
+                  id="type-filter"
+                  class="form-control"
+                  name="type"
+                  data-type-filter
+                >
+                  <option
+                    value="all"
+                    data-i18n="resources.allTypes"
+                  >
+                    All types
+                  </option>
+
+                  <option
+                    value="article"
+                    data-i18n="resourceLabels.article"
+                  >
+                    Article
+                  </option>
+
+                  <option
+                    value="video"
+                    data-i18n="resourceLabels.video"
+                  >
+                    Video
+                  </option>
+
+                  <option
+                    value="tutorial"
+                    data-i18n="resourceLabels.tutorial"
+                  >
+                    Tutorial
+                  </option>
+
+                  <option
+                    value="course"
+                    data-i18n="resourceLabels.course"
+                  >
+                    Course
+                  </option>
+
+                  <option
+                    value="documentation"
+                    data-i18n="resourceLabels.documentation"
+                  >
+                    Documentation
+                  </option>
+
+                  <option
+                    value="exercise"
+                    data-i18n="resourceLabels.exercise"
+                  >
+                    Exercise
+                  </option>
+                </select>
+              </div>
+
+              <div class="form-field">
+                <label
+                  class="form-label"
+                  for="language-filter"
+                  data-i18n="resources.languageLabel"
+                >
+                  Resource language
+                </label>
+
+                <select
+                  id="language-filter"
+                  class="form-control"
+                  name="language"
+                  data-resource-language-filter
+                >
+                  <option
+                    value="all"
+                    data-i18n="resources.allLanguages"
+                  >
+                    All languages
+                  </option>
+
+                  <option
+                    value="en"
+                    data-i18n="resourceLabels.english"
+                  >
+                    English
+                  </option>
+
+                  <option
+                    value="ar"
+                    data-i18n="resourceLabels.arabic"
+                  >
+                    Arabic
+                  </option>
+
+                  <option
+                    value="bilingual"
+                    data-i18n="resourceLabels.bilingual"
+                  >
+                    English and Arabic
+                  </option>
+                </select>
+              </div>
+
+              <div class="form-field">
+                <label
+                  class="form-label"
+                  for="sort-resources"
+                  data-i18n="resources.sortLabel"
+                >
+                  Sort resources
+                </label>
+
+                <select
+                  id="sort-resources"
+                  class="form-control"
+                  name="sort"
+                  data-resource-sort
+                >
+                  <option
+                    value="title-asc"
+                    data-i18n="resources.sortTitleAscending"
+                  >
+                    Title: A to Z
+                  </option>
+
+                  <option
+                    value="title-desc"
+                    data-i18n="resources.sortTitleDescending"
+                  >
+                    Title: Z to A
+                  </option>
+
+                  <option
+                    value="duration-asc"
+                    data-i18n="resources.sortDurationAscending"
+                  >
+                    Shortest first
+                  </option>
+
+                  <option
+                    value="duration-desc"
+                    data-i18n="resources.sortDurationDescending"
+                  >
+                    Longest first
+                  </option>
+                </select>
+              </div>
+            </div>
+
+            <div class="filter-actions">
+              <button
+                class="button button--secondary"
+                type="button"
+                data-reset-filters
+                data-i18n="resources.resetFilters"
+              >
+                Reset filters
+              </button>
+            </div>
+          </form>
+
+          <div class="results-toolbar">
+            <p
+              class="results-count"
+              data-resource-count
+              aria-live="polite"
+            >
+              12 resources found
+            </p>
+          </div>
 
           <div
-            id="resource-library"
             class="resource-grid"
             data-resource-library
-            aria-live="polite"
           ></div>
+
+          <div
+            class="empty-state resource-empty-state"
+            data-no-resources
+            hidden
+          >
+            <h2 data-i18n="resources.noResultsTitle">
+              No matching resources
+            </h2>
+
+            <p data-i18n="resources.noResultsDescription">
+              Try a different search term or reset one or more filters.
+            </p>
+
+            <button
+              class="button button--primary"
+              type="button"
+              data-reset-filters
+              data-i18n="resources.resetFilters"
+            >
+              Reset filters
+            </button>
+          </div>
+
+          <p
+            class="resource-action-message"
+            data-resource-action-message
+            aria-live="polite"
+          ></p>
         </div>
       </section>
     </main>
@@ -257,7 +612,9 @@
 
           <ul class="footer-list">
             <li>
-              <a href="index.html" data-i18n="common.navHome">Home</a>
+              <a href="index.html" data-i18n="common.navHome">
+                Home
+              </a>
             </li>
 
             <li>
@@ -267,7 +624,9 @@
             </li>
 
             <li>
-              <a href="about.html" data-i18n="common.navAbout">About</a>
+              <a href="about.html" data-i18n="common.navAbout">
+                About
+              </a>
             </li>
 
             <li>
@@ -324,5 +683,21 @@
         </p>
       </div>
     </footer>
+
+    <a
+      class="back-to-top"
+      href="#top"
+      aria-label="Back to top"
+      data-i18n-aria-label="common.backToTop"
+    >
+      <span aria-hidden="true">↑</span>
+
+      <span
+        class="visually-hidden"
+        data-i18n="common.backToTop"
+      >
+        Back to top
+      </span>
+    </a>
   </body>
 </html>

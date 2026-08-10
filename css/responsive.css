@@ -254,3 +254,51 @@
     inline-size: auto;
   }
 }
+
+/* =========================================================
+   Resources page: large mobile phones
+   ========================================================= */
+
+@media (min-width: 481px) {
+  .filter-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .filter-field--search {
+    grid-column: 1 / -1;
+  }
+}
+
+
+/* =========================================================
+   Resources page: tablets and laptops
+   ========================================================= */
+
+@media (min-width: 769px) {
+  .filter-panel {
+    padding: var(--space-6);
+  }
+
+  .filter-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .filter-field--search {
+    grid-column: span 2;
+  }
+}
+
+
+/* =========================================================
+   Resources page: desktop monitors
+   ========================================================= */
+
+@media (min-width: 1025px) {
+  .filter-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  .filter-field--search {
+    grid-column: span 2;
+  }
+}
