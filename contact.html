@@ -6,7 +6,7 @@
 
     <meta
       name="description"
-      content="Contact LearnBridge through the bilingual contact form or WhatsApp."
+      content="Contact LearnBridge through the bilingual contact form and learn about available contact options."
     >
 
     <meta name="theme-color" content="#2563eb">
@@ -18,7 +18,7 @@
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Kufi+Arabic:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     >
-    
+
     <title>LearnBridge | Contact</title>
 
     <link rel="stylesheet" href="css/style.css">
@@ -29,7 +29,7 @@
     <script src="js/contact.js" defer></script>
   </head>
 
-  <body data-page="contact">
+  <body id="top" data-page="contact">
     <a
       class="skip-link"
       href="#main-content"
@@ -72,7 +72,6 @@
             Menu
           </span>
         </button>
-
 
         <nav
           id="primary-navigation"
@@ -125,7 +124,7 @@
           </ul>
 
           <div class="navigation-actions">
-           <button
+            <button
               class="control-button language-toggle"
               type="button"
               data-language-toggle
@@ -186,55 +185,467 @@
 
           <h1
             id="contact-page-title"
-            data-i18n="contact.placeholderTitle"
+            data-i18n="contact.title"
           >
-            We would be happy to hear from you
+            Have a question about the learning resources?
           </h1>
 
-          <p data-i18n="contact.placeholderDescription">
-            The bilingual contact form and its field-specific validation will
-            be added in Phase 10.
+          <p data-i18n="contact.description">
+            Send a message using the form or review the available contact
+            options below.
           </p>
         </div>
       </section>
 
       <section
-        id="contact-form-placeholder"
         class="section"
-        aria-labelledby="contact-form-placeholder-title"
+        aria-labelledby="contact-form-title"
       >
-        <div class="container">
-          <h2
-            id="contact-form-placeholder-title"
-            data-i18n="contact.formPlaceholderTitle"
+        <div class="container contact-layout">
+          <aside
+            class="contact-information"
+            aria-labelledby="contact-information-title"
           >
-            Contact form area
-          </h2>
+            <p
+              class="eyebrow"
+              data-i18n="contact.infoEyebrow"
+            >
+              Before you send a message
+            </p>
 
-          <p data-i18n="contact.formPlaceholderDescription">
-            This area will contain the full name, email, subject, message, and
-            preferred contact method fields.
-          </p>
+            <h2
+              id="contact-information-title"
+              data-i18n="contact.infoTitle"
+            >
+              How LearnBridge can help
+            </h2>
+
+            <p data-i18n="contact.infoDescription">
+              Contact LearnBridge for general questions about the platform,
+              educational-resource categories, or where to begin.
+            </p>
+
+            <div class="contact-info-list">
+              <article class="contact-info-item">
+                <span
+                  class="contact-info-icon"
+                  aria-hidden="true"
+                >
+                  ?
+                </span>
+
+                <div>
+                  <h3 data-i18n="contact.questionTitle">
+                    Resource questions
+                  </h3>
+
+                  <p data-i18n="contact.questionDescription">
+                    Ask about available categories, levels, and types of
+                    learning resources.
+                  </p>
+                </div>
+              </article>
+
+              <article class="contact-info-item">
+                <span
+                  class="contact-info-icon"
+                  aria-hidden="true"
+                >
+                  EN
+                </span>
+
+                <div>
+                  <h3 data-i18n="contact.languageHelpTitle">
+                    Language support
+                  </h3>
+
+                  <p data-i18n="contact.languageHelpDescription">
+                    Ask about using LearnBridge in English or Arabic.
+                  </p>
+                </div>
+              </article>
+
+              <article class="contact-info-item">
+                <span
+                  class="contact-info-icon"
+                  aria-hidden="true"
+                >
+                  →
+                </span>
+
+                <div>
+                  <h3 data-i18n="contact.startingPointTitle">
+                    Finding a starting point
+                  </h3>
+
+                  <p data-i18n="contact.startingPointDescription">
+                    Explain what you want to learn and ask where to begin.
+                  </p>
+                </div>
+              </article>
+            </div>
+
+            <div class="contact-response-note">
+              <strong data-i18n="contact.demoNoticeTitle">
+                Portfolio demonstration
+              </strong>
+
+              <p data-i18n="contact.demoNoticeDescription">
+                This version demonstrates front-end form validation. Messages
+                are not transmitted to a server or email address.
+              </p>
+            </div>
+          </aside>
+
+          <div class="contact-form-panel">
+            <div class="contact-form-heading">
+              <p
+                class="eyebrow"
+                data-i18n="contact.formEyebrow"
+              >
+                Send a message
+              </p>
+
+              <h2
+                id="contact-form-title"
+                data-i18n="contact.formTitle"
+              >
+                Contact form
+              </h2>
+
+              <p data-i18n="contact.formDescription">
+                Complete the fields below. Required fields are marked with an
+                asterisk.
+              </p>
+            </div>
+
+            <div
+              class="alert alert--success contact-form-status"
+              role="status"
+              tabindex="-1"
+              data-contact-status
+              hidden
+            ></div>
+
+            <form
+              id="contact-form"
+              class="contact-form"
+              action="#"
+              method="post"
+              novalidate
+              data-contact-form
+            >
+              <div class="contact-form-grid">
+                <div class="form-field">
+                  <label
+                    class="form-label"
+                    for="contact-name"
+                  >
+                    <span data-i18n="contact.nameLabel">
+                      Full name
+                    </span>
+
+                    <span
+                      class="required-indicator"
+                      aria-hidden="true"
+                    >
+                      *
+                    </span>
+                  </label>
+
+                  <input
+                    id="contact-name"
+                    class="form-control"
+                    type="text"
+                    name="name"
+                    autocomplete="name"
+                    maxlength="80"
+                    placeholder="Enter your full name"
+                    data-i18n-placeholder="contact.namePlaceholder"
+                    aria-describedby="contact-name-error"
+                    data-contact-name
+                  >
+
+                  <p
+                    id="contact-name-error"
+                    class="field-message field-message--error"
+                    data-field-error="name"
+                    aria-live="polite"
+                  ></p>
+                </div>
+
+                <div class="form-field">
+                  <label
+                    class="form-label"
+                    for="contact-email"
+                  >
+                    <span data-i18n="contact.emailLabel">
+                      Email address
+                    </span>
+
+                    <span
+                      class="required-indicator"
+                      aria-hidden="true"
+                    >
+                      *
+                    </span>
+                  </label>
+
+                  <input
+                    id="contact-email"
+                    class="form-control"
+                    type="email"
+                    name="email"
+                    autocomplete="email"
+                    maxlength="120"
+                    placeholder="Enter your email address"
+                    data-i18n-placeholder="contact.emailPlaceholder"
+                    aria-describedby="contact-email-error"
+                    data-contact-email
+                  >
+
+                  <p
+                    id="contact-email-error"
+                    class="field-message field-message--error"
+                    data-field-error="email"
+                    aria-live="polite"
+                  ></p>
+                </div>
+
+                <div class="form-field contact-form-field--full">
+                  <label
+                    class="form-label"
+                    for="contact-subject"
+                  >
+                    <span data-i18n="contact.subjectLabel">
+                      Subject
+                    </span>
+
+                    <span
+                      class="required-indicator"
+                      aria-hidden="true"
+                    >
+                      *
+                    </span>
+                  </label>
+
+                  <input
+                    id="contact-subject"
+                    class="form-control"
+                    type="text"
+                    name="subject"
+                    maxlength="120"
+                    placeholder="What would you like to ask about?"
+                    data-i18n-placeholder="contact.subjectPlaceholder"
+                    aria-describedby="contact-subject-error"
+                    data-contact-subject
+                  >
+
+                  <p
+                    id="contact-subject-error"
+                    class="field-message field-message--error"
+                    data-field-error="subject"
+                    aria-live="polite"
+                  ></p>
+                </div>
+
+                <div class="form-field contact-form-field--full">
+                  <label
+                    class="form-label"
+                    for="contact-message"
+                  >
+                    <span data-i18n="contact.messageLabel">
+                      Message
+                    </span>
+
+                    <span
+                      class="required-indicator"
+                      aria-hidden="true"
+                    >
+                      *
+                    </span>
+                  </label>
+
+                  <textarea
+                    id="contact-message"
+                    class="form-control"
+                    name="message"
+                    maxlength="1000"
+                    rows="7"
+                    placeholder="Write your message"
+                    data-i18n-placeholder="contact.messagePlaceholder"
+                    aria-describedby="contact-message-note contact-message-error"
+                    data-contact-message
+                  ></textarea>
+
+                  <p
+                    id="contact-message-note"
+                    class="field-message"
+                    data-i18n="contact.messageNote"
+                  >
+                    Please provide at least 10 characters.
+                  </p>
+
+                  <p
+                    id="contact-message-error"
+                    class="field-message field-message--error"
+                    data-field-error="message"
+                    aria-live="polite"
+                  ></p>
+                </div>
+
+                <fieldset
+                  class="preferred-contact-field contact-form-field--full"
+                  aria-describedby="preferred-contact-error"
+                  data-preferred-contact-group
+                >
+                  <legend class="form-label">
+                    <span data-i18n="contact.preferredMethodLabel">
+                      Preferred contact method
+                    </span>
+
+                    <span
+                      class="required-indicator"
+                      aria-hidden="true"
+                    >
+                      *
+                    </span>
+                  </legend>
+
+                  <div class="preferred-contact-options">
+                    <label class="preferred-contact-option">
+                      <input
+                        type="radio"
+                        name="preferred-contact"
+                        value="email"
+                        data-preferred-contact
+                      >
+
+                      <span data-i18n="contact.methodEmail">
+                        Email
+                      </span>
+                    </label>
+
+                    <label class="preferred-contact-option">
+                      <input
+                        type="radio"
+                        name="preferred-contact"
+                        value="whatsapp"
+                        data-preferred-contact
+                      >
+
+                      <span data-i18n="contact.methodWhatsApp">
+                        WhatsApp
+                      </span>
+                    </label>
+                  </div>
+
+                  <p
+                    id="preferred-contact-error"
+                    class="field-message field-message--error"
+                    data-field-error="preferredContact"
+                    aria-live="polite"
+                  ></p>
+                </fieldset>
+              </div>
+
+              <div class="contact-form-actions">
+                <button
+                  class="button button--primary"
+                  type="submit"
+                  data-i18n="contact.submitButton"
+                >
+                  Send message
+                </button>
+
+                <button
+                  class="button button--secondary"
+                  type="reset"
+                  data-i18n="contact.clearButton"
+                >
+                  Clear form
+                </button>
+              </div>
+            </form>
+          </div>
         </div>
       </section>
 
       <section
         id="whatsapp-contact"
-        class="section"
+        class="section section--subtle"
         aria-labelledby="whatsapp-contact-title"
       >
         <div class="container">
-          <h2
-            id="whatsapp-contact-title"
-            data-i18n="contact.whatsappTitle"
-          >
-            Contact through WhatsApp
-          </h2>
+          <div class="contact-whatsapp-panel">
+            <div>
+              <p
+                class="eyebrow"
+                data-i18n="contact.whatsappEyebrow"
+              >
+                WhatsApp contact
+              </p>
 
-          <p data-i18n="contact.whatsappPlaceholderDescription">
-            The final bilingual WhatsApp link will be generated using
-            JavaScript after the placeholder phone number is configured.
-          </p>
+              <h2
+                id="whatsapp-contact-title"
+                data-i18n="contact.whatsappTitle"
+              >
+                Prefer WhatsApp?
+              </h2>
+
+              <p data-i18n="contact.whatsappDescription">
+                LearnBridge will support a language-specific WhatsApp
+                click-to-chat message. The final phone number will be
+                configured before publication.
+              </p>
+            </div>
+
+            <div class="contact-whatsapp-details">
+              <span
+                class="contact-whatsapp-number"
+                aria-label="Placeholder WhatsApp number"
+                data-i18n-aria-label="contact.whatsappNumberLabel"
+              >
+                961XXXXXXXX
+              </span>
+
+              <p data-i18n="contact.whatsappNumberNote">
+                Placeholder only — no real number is connected yet.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section
+        class="section"
+        aria-labelledby="technical-notice-title"
+      >
+        <div class="container">
+          <div class="contact-technical-notice">
+            <span
+              class="contact-technical-icon"
+              aria-hidden="true"
+            >
+              &lt;/&gt;
+            </span>
+
+            <div>
+              <h2
+                id="technical-notice-title"
+                data-i18n="contact.technicalTitle"
+              >
+                Why does this form not send real email yet?
+              </h2>
+
+              <p data-i18n="contact.technicalDescription">
+                HTML, CSS, and browser JavaScript can validate this form, but
+                safely sending email requires a backend, serverless function,
+                form service, or external API. LearnBridge v1 intentionally
+                remains a front-end-only project.
+              </p>
+            </div>
+          </div>
         </div>
       </section>
     </main>
@@ -272,7 +683,9 @@
 
           <ul class="footer-list">
             <li>
-              <a href="index.html" data-i18n="common.navHome">Home</a>
+              <a href="index.html" data-i18n="common.navHome">
+                Home
+              </a>
             </li>
 
             <li>
@@ -282,7 +695,9 @@
             </li>
 
             <li>
-              <a href="about.html" data-i18n="common.navAbout">About</a>
+              <a href="about.html" data-i18n="common.navAbout">
+                About
+              </a>
             </li>
 
             <li>
@@ -339,5 +754,21 @@
         </p>
       </div>
     </footer>
+
+    <a
+      class="back-to-top"
+      href="#top"
+      aria-label="Back to top"
+      data-i18n-aria-label="common.backToTop"
+    >
+      <span aria-hidden="true">↑</span>
+
+      <span
+        class="visually-hidden"
+        data-i18n="common.backToTop"
+      >
+        Back to top
+      </span>
+    </a>
   </body>
 </html>

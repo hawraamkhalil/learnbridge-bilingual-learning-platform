@@ -2090,15 +2090,44 @@ html[dir="rtl"] .about-philosophy-steps li {
   box-shadow: var(--shadow-card);
 }
 
+.about-language-visual {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-5);
+
+  align-items: stretch;
+
+  padding: var(--space-6);
+
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-extra-large);
+
+  background:
+    radial-gradient(
+      circle at 20% 20%,
+      var(--color-primary-soft),
+      transparent 45%
+    ),
+    radial-gradient(
+      circle at 80% 80%,
+      var(--color-accent-soft),
+      transparent 45%
+    ),
+    var(--color-surface);
+
+  box-shadow: var(--shadow-card);
+}
+
 .about-language-card {
-  position: absolute;
+  position: static;
 
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  gap: var(--space-8);
 
-  inline-size: min(11rem, 44%);
-  aspect-ratio: 0.82;
+  inline-size: min(100%, 15rem);
+  min-block-size: 10rem;
 
   padding: var(--space-5);
 
@@ -2110,28 +2139,34 @@ html[dir="rtl"] .about-philosophy-steps li {
 }
 
 .about-language-card span {
+  display: block;
+
   color: var(--color-primary);
   font-size: var(--font-size-small);
   font-weight: 700;
 }
 
 .about-language-card strong {
+  display: block;
+
   color: var(--color-heading);
   font-size: clamp(1.5rem, 5vw, 2.25rem);
+  font-weight: 700;
+  line-height: 1.4;
 }
 
 .about-language-card--en {
-  inset-block-start: 12%;
-  inset-inline-start: 14%;
+  justify-self: start;
 
   direction: ltr;
+  text-align: left;
 }
 
 .about-language-card--ar {
-  inset-block-end: 12%;
-  inset-inline-end: 14%;
+  justify-self: end;
 
   direction: rtl;
+  text-align: right;
 }
 
 .about-bilingual-copy p:not(.eyebrow) {
@@ -2178,7 +2213,292 @@ html[dir="rtl"] .about-philosophy-steps li {
 }
 
 /* =========================================================
-   18. Reduced-motion preference
+   18. Contact page
+   ========================================================= */
+
+.contact-layout {
+  display: grid;
+  gap: var(--space-8);
+  align-items: start;
+}
+
+.contact-information {
+  padding: var(--space-6);
+
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-extra-large);
+
+  background:
+    linear-gradient(
+      145deg,
+      var(--color-primary-soft),
+      var(--color-surface)
+    );
+
+  box-shadow: var(--shadow-card);
+}
+
+.contact-information > p:not(.eyebrow) {
+  color: var(--color-text-muted);
+}
+
+.contact-info-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+
+  margin-block-start: var(--space-8);
+}
+
+.contact-info-item {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-4);
+}
+
+.contact-info-item h3 {
+  margin-block-end: var(--space-2);
+  font-size: 1.05rem;
+}
+
+.contact-info-item p {
+  color: var(--color-text-muted);
+  font-size: var(--font-size-small);
+}
+
+.contact-info-icon,
+.contact-technical-icon {
+  display: inline-grid;
+  place-items: center;
+  flex: none;
+
+  min-inline-size: 2.75rem;
+  block-size: 2.75rem;
+  padding-inline: var(--space-2);
+
+  border-radius: var(--radius-medium);
+
+  background-color: var(--color-primary);
+  color: var(--color-primary-text);
+
+  font-size: var(--font-size-small);
+  font-weight: 700;
+
+  direction: ltr;
+  unicode-bidi: isolate;
+}
+
+.contact-response-note {
+  margin-block-start: var(--space-8);
+  padding: var(--space-4);
+
+  border: 1px solid var(--color-border);
+  border-inline-start: 0.3rem solid var(--color-accent);
+  border-radius: var(--radius-medium);
+
+  background-color: var(--color-surface);
+}
+
+.contact-response-note strong {
+  display: block;
+  margin-block-end: var(--space-2);
+
+  color: var(--color-heading);
+}
+
+.contact-response-note p {
+  color: var(--color-text-muted);
+  font-size: var(--font-size-small);
+}
+
+.contact-form-panel {
+  min-inline-size: 0;
+
+  padding: var(--space-6);
+
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-extra-large);
+
+  background-color: var(--color-surface);
+  box-shadow: var(--shadow-card);
+}
+
+.contact-form-heading {
+  margin-block-end: var(--space-6);
+}
+
+.contact-form-heading p:not(.eyebrow) {
+  color: var(--color-text-muted);
+}
+
+.contact-form-grid {
+  display: grid;
+  gap: var(--space-5);
+}
+
+.contact-form-field--full {
+  grid-column: 1 / -1;
+}
+
+.contact-form .field-message--error {
+  min-block-size: 1.4em;
+}
+
+.preferred-contact-field {
+  min-inline-size: 0;
+  padding: 0;
+  margin: 0;
+
+  border: 0;
+}
+
+.preferred-contact-field.has-error {
+  padding: var(--space-3);
+
+  border: 1px solid var(--color-error);
+  border-radius: var(--radius-medium);
+}
+
+.preferred-contact-options {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+
+  margin-block-start: var(--space-3);
+}
+
+.preferred-contact-option {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+
+  min-block-size: var(--touch-target);
+  padding: var(--space-3) var(--space-4);
+
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-medium);
+
+  background-color: var(--color-surface-subtle);
+
+  cursor: pointer;
+
+  transition:
+    border-color var(--transition-fast),
+    background-color var(--transition-fast);
+}
+
+.preferred-contact-option:hover {
+  border-color: var(--color-primary);
+  background-color: var(--color-primary-soft);
+}
+
+.preferred-contact-option input {
+  flex: none;
+
+  inline-size: 1.125rem;
+  block-size: 1.125rem;
+  margin: 0;
+
+  accent-color: var(--color-primary);
+}
+
+.contact-form-actions {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+
+  margin-block-start: var(--space-6);
+  padding-block-start: var(--space-6);
+
+  border-block-start: 1px solid var(--color-border);
+}
+
+.contact-form-status {
+  margin-block-end: var(--space-6);
+}
+
+.contact-form-status[hidden] {
+  display: none;
+}
+
+.contact-form-status:focus {
+  outline: 3px solid var(--color-success);
+  outline-offset: 3px;
+}
+
+.contact-whatsapp-panel {
+  display: grid;
+  gap: var(--space-6);
+
+  padding: var(--space-6);
+
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-extra-large);
+
+  background-color: var(--color-surface);
+  box-shadow: var(--shadow-card);
+}
+
+.contact-whatsapp-panel p:not(.eyebrow) {
+  max-inline-size: 45rem;
+  color: var(--color-text-muted);
+}
+
+.contact-whatsapp-details {
+  padding: var(--space-5);
+
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-large);
+
+  background-color: var(--color-surface-subtle);
+}
+
+.contact-whatsapp-number {
+  display: block;
+
+  margin-block-end: var(--space-2);
+
+  color: var(--color-heading);
+
+  font-size: clamp(1.25rem, 5vw, 1.75rem);
+  font-weight: 700;
+
+  direction: ltr;
+  unicode-bidi: isolate;
+}
+
+.contact-whatsapp-details p {
+  margin: 0;
+
+  color: var(--color-text-muted);
+  font-size: var(--font-size-small);
+}
+
+.contact-technical-notice {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-5);
+
+  max-inline-size: 55rem;
+  margin-inline: auto;
+  padding: var(--space-6);
+
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-large);
+
+  background-color: var(--color-surface-subtle);
+}
+
+.contact-technical-notice h2 {
+  font-size: 1.25rem;
+}
+
+.contact-technical-notice p {
+  color: var(--color-text-muted);
+}
+
+/* =========================================================
+   19. Reduced-motion preference
    ========================================================= */
 
 @media (prefers-reduced-motion: reduce) {

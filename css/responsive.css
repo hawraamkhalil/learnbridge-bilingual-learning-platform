@@ -388,3 +388,72 @@
     min-block-size: 23rem;
   }
 }
+
+/* =========================================================
+   Contact page: large mobile phones
+   ========================================================= */
+
+@media (min-width: 481px) {
+  .preferred-contact-options,
+  .contact-form-actions {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+}
+
+
+/* =========================================================
+   Contact page: tablets and small laptops
+   ========================================================= */
+
+@media (min-width: 769px) {
+  .contact-layout {
+    grid-template-columns:
+      minmax(17rem, 0.75fr)
+      minmax(0, 1.25fr);
+
+    gap: var(--space-8);
+  }
+
+  .contact-form-grid {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+  }
+
+  .contact-information,
+  .contact-form-panel {
+    padding: var(--space-8);
+  }
+
+  .contact-whatsapp-panel {
+    grid-template-columns:
+      minmax(0, 1.3fr)
+      minmax(15rem, 0.7fr);
+
+    align-items: center;
+
+    padding: var(--space-8);
+  }
+}
+
+
+/* =========================================================
+   Contact page: desktop monitors
+   ========================================================= */
+
+@media (min-width: 1025px) {
+  .contact-layout {
+    gap: var(--space-12);
+  }
+
+  .contact-information {
+    position: sticky;
+    inset-block-start: 7rem;
+  }
+
+  .contact-form-panel,
+  .contact-information,
+  .contact-whatsapp-panel {
+    padding: var(--space-10);
+  }
+}

@@ -498,19 +498,121 @@ const translations = {
 
     contact: {
       eyebrow: "Contact LearnBridge",
-      placeholderTitle:
-        "We would be happy to hear from you",
-      placeholderDescription:
-        "The bilingual contact form and its field-specific validation will be added in Phase 10.",
 
-      formPlaceholderTitle: "Contact form area",
-      formPlaceholderDescription:
-        "This area will contain the full name, email, subject, message, and preferred contact method fields.",
+      title:
+        "Have a question about the learning resources?",
 
-      whatsappTitle: "Contact through WhatsApp",
-      whatsappPlaceholderDescription:
-        "The final bilingual WhatsApp link will be generated using JavaScript after the placeholder phone number is configured."
-    }
+      description:
+        "Send a message using the form or review the available contact options below.",
+
+      infoEyebrow: "Before you send a message",
+      infoTitle: "How LearnBridge can help",
+
+      infoDescription:
+        "Contact LearnBridge for general questions about the platform, educational-resource categories, or where to begin.",
+
+      questionTitle: "Resource questions",
+
+      questionDescription:
+        "Ask about available categories, levels, and types of learning resources.",
+
+      languageHelpTitle: "Language support",
+
+      languageHelpDescription:
+        "Ask about using LearnBridge in English or Arabic.",
+
+      startingPointTitle: "Finding a starting point",
+
+      startingPointDescription:
+        "Explain what you want to learn and ask where to begin.",
+
+      demoNoticeTitle: "Portfolio demonstration",
+
+      demoNoticeDescription:
+        "This version demonstrates front-end form validation. Messages are not transmitted to a server or email address.",
+
+      formEyebrow: "Send a message",
+      formTitle: "Contact form",
+
+      formDescription:
+        "Complete the fields below. Required fields are marked with an asterisk.",
+
+      nameLabel: "Full name",
+      namePlaceholder: "Enter your full name",
+
+      emailLabel: "Email address",
+      emailPlaceholder: "Enter your email address",
+
+      subjectLabel: "Subject",
+
+      subjectPlaceholder:
+        "What would you like to ask about?",
+
+      messageLabel: "Message",
+      messagePlaceholder: "Write your message",
+
+      messageNote:
+        "Please provide at least 10 characters.",
+
+      preferredMethodLabel:
+        "Preferred contact method",
+
+      methodEmail: "Email",
+      methodWhatsApp: "WhatsApp",
+
+      submitButton: "Send message",
+      clearButton: "Clear form",
+
+      whatsappEyebrow: "WhatsApp contact",
+      whatsappTitle: "Prefer WhatsApp?",
+
+      whatsappDescription:
+        "LearnBridge will support a language-specific WhatsApp click-to-chat message. The final phone number will be configured before publication.",
+
+      whatsappNumberLabel:
+        "Placeholder WhatsApp number",
+
+      whatsappNumberNote:
+        "Placeholder only — no real number is connected yet.",
+
+      technicalTitle:
+        "Why does this form not send real email yet?",
+
+      technicalDescription:
+        "HTML, CSS, and browser JavaScript can validate this form, but safely sending email requires a backend, serverless function, form service, or external API. LearnBridge v1 intentionally remains a front-end-only project.",
+
+      errors: {
+        nameRequired:
+          "Please enter your name.",
+
+        nameTooShort:
+          "Your name must contain at least 2 characters.",
+
+        emailRequired:
+          "Please enter your email address.",
+
+        emailInvalid:
+          "Please enter a valid email address.",
+
+        subjectRequired:
+          "Please enter a subject.",
+
+        subjectTooShort:
+          "The subject must contain at least 4 characters.",
+
+        messageRequired:
+          "Please enter your message.",
+
+        messageTooShort:
+          "Your message must contain at least 10 characters.",
+
+        preferredContactRequired:
+          "Please select a preferred contact method."
+      },
+
+      successMessage:
+        "Your form is valid. This is a front-end demonstration, so no message was actually sent."
+    },
   },
 
   ar: {
@@ -1001,18 +1103,121 @@ const translations = {
 
     contact: {
       eyebrow: "تواصل مع LearnBridge",
-      placeholderTitle: "يسعدنا أن نتلقى رسالتك",
-      placeholderDescription:
-        "ستتم إضافة نموذج التواصل ثنائي اللغة ورسائل التحقق الخاصة بكل حقل في المرحلة 10.",
 
-      formPlaceholderTitle: "منطقة نموذج التواصل",
-      formPlaceholderDescription:
-        "ستحتوي هذه المنطقة على حقول الاسم الكامل والبريد الإلكتروني والموضوع والرسالة وطريقة التواصل المفضّلة.",
+      title:
+        "هل لديك سؤال حول المصادر التعليمية؟",
 
-      whatsappTitle: "التواصل عبر واتساب",
-      whatsappPlaceholderDescription:
-        "سيتم إنشاء رابط واتساب النهائي باللغتين باستخدام JavaScript بعد إعداد رقم الهاتف المؤقت."
-    }
+      description:
+        "أرسل رسالة باستخدام النموذج أو اطّلع على خيارات التواصل المتاحة أدناه.",
+
+      infoEyebrow: "قبل إرسال رسالتك",
+      infoTitle: "كيف يمكن لـ LearnBridge مساعدتك؟",
+
+      infoDescription:
+        "تواصل مع LearnBridge للاستفسارات العامة حول المنصة أو فئات المصادر التعليمية أو نقطة البداية المناسبة.",
+
+      questionTitle: "أسئلة حول المصادر",
+
+      questionDescription:
+        "اسأل عن المجالات والمستويات وأنواع المصادر التعليمية المتوفرة.",
+
+      languageHelpTitle: "دعم اللغة",
+
+      languageHelpDescription:
+        "استفسر عن استخدام LearnBridge باللغة الإنجليزية أو العربية.",
+
+      startingPointTitle: "اختيار نقطة البداية",
+
+      startingPointDescription:
+        "اشرح ما تريد تعلّمه واسأل عن نقطة البداية المناسبة.",
+
+      demoNoticeTitle: "نموذج تجريبي للمشروع",
+
+      demoNoticeDescription:
+        "يعرض هذا الإصدار التحقق من النموذج على الواجهة الأمامية فقط، ولا يتم إرسال الرسائل إلى خادم أو بريد إلكتروني.",
+
+      formEyebrow: "أرسل رسالة",
+      formTitle: "نموذج التواصل",
+
+      formDescription:
+        "أكمل الحقول أدناه. الحقول المطلوبة مميزة بعلامة النجمة.",
+
+      nameLabel: "الاسم الكامل",
+      namePlaceholder: "أدخل اسمك الكامل",
+
+      emailLabel: "البريد الإلكتروني",
+      emailPlaceholder: "أدخل بريدك الإلكتروني",
+
+      subjectLabel: "الموضوع",
+
+      subjectPlaceholder:
+        "ما الموضوع الذي تريد الاستفسار عنه؟",
+
+      messageLabel: "الرسالة",
+      messagePlaceholder: "اكتب رسالتك",
+
+      messageNote:
+        "يرجى كتابة 10 أحرف على الأقل.",
+
+      preferredMethodLabel:
+        "طريقة التواصل المفضلة",
+
+      methodEmail: "البريد الإلكتروني",
+      methodWhatsApp: "واتساب",
+
+      submitButton: "إرسال الرسالة",
+      clearButton: "مسح النموذج",
+
+      whatsappEyebrow: "التواصل عبر واتساب",
+      whatsappTitle: "هل تفضّل واتساب؟",
+
+      whatsappDescription:
+        "ستدعم LearnBridge رسالة واتساب جاهزة تتغير حسب اللغة. سيتم إعداد رقم الهاتف النهائي قبل نشر المشروع.",
+
+      whatsappNumberLabel:
+        "رقم واتساب تجريبي",
+
+      whatsappNumberNote:
+        "رقم تجريبي فقط — لم يتم ربط رقم حقيقي بعد.",
+
+      technicalTitle:
+        "لماذا لا يرسل هذا النموذج بريداً إلكترونياً حقيقياً بعد؟",
+
+      technicalDescription:
+        "يمكن لـ HTML وCSS وJavaScript في المتصفح التحقق من النموذج، لكن إرسال البريد الإلكتروني بأمان يحتاج إلى خادم أو دالة Serverless أو خدمة نماذج أو API خارجي. يبقى الإصدار الأول من LearnBridge مشروع واجهة أمامية فقط.",
+
+      errors: {
+        nameRequired:
+          "يرجى إدخال اسمك.",
+
+        nameTooShort:
+          "يجب أن يحتوي الاسم على حرفين على الأقل.",
+
+        emailRequired:
+          "يرجى إدخال بريدك الإلكتروني.",
+
+        emailInvalid:
+          "يرجى إدخال بريد إلكتروني صالح.",
+
+        subjectRequired:
+          "يرجى إدخال موضوع الرسالة.",
+
+        subjectTooShort:
+          "يجب أن يحتوي الموضوع على 4 أحرف على الأقل.",
+
+        messageRequired:
+          "يرجى كتابة رسالتك.",
+
+        messageTooShort:
+          "يجب أن تحتوي الرسالة على 10 أحرف على الأقل.",
+
+        preferredContactRequired:
+          "يرجى اختيار طريقة التواصل المفضلة."
+      },
+
+      successMessage:
+        "النموذج صالح. هذا نموذج تجريبي للواجهة الأمامية، لذلك لم يتم إرسال أي رسالة فعلياً."
+    },
   }
 };
 
