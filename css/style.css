@@ -264,6 +264,10 @@ p:last-child {
   color: var(--color-heading);
 }
 
+[id] {
+  scroll-margin-block-start: 6rem;
+}
+
 
 /* =========================================================
    4. Keyboard focus and accessibility helpers
@@ -2543,7 +2547,35 @@ html[dir="rtl"] .about-philosophy-steps li {
 }
 
 /* =========================================================
-   20. Reduced-motion preference
+   20. High-contrast accessibility
+   ========================================================= */
+
+@media (forced-colors: active) {
+  .button,
+  .control-button,
+  .bookmark-button,
+  .form-control,
+  .preferred-contact-option,
+  .bookmark-filter-control,
+  .card {
+    border: 1px solid CanvasText;
+  }
+
+  :focus-visible {
+    outline: 3px solid Highlight;
+  }
+
+  .menu-toggle__bar {
+    background-color: ButtonText;
+  }
+
+  .required-indicator {
+    color: CanvasText;
+  }
+}
+
+/* =========================================================
+   21. Reduced-motion preference
    ========================================================= */
 
 @media (prefers-reduced-motion: reduce) {
@@ -2595,4 +2627,18 @@ html[lang="ar"] input,
 html[lang="ar"] textarea,
 html[lang="ar"] select {
   text-align: start;
+}
+
+.preferred-contact-option:has(
+  input:focus-visible
+) {
+  outline: 3px solid var(--color-primary);
+  outline-offset: 3px;
+}
+
+.bookmark-filter-control:has(
+  input:focus-visible
+) {
+  outline: 3px solid var(--color-primary);
+  outline-offset: 3px;
 }

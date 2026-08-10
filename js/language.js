@@ -35,6 +35,12 @@ const translations = {
       switchToArabic: "Switch language to Arabic",
       switchToEnglish: "Switch language to English",
 
+      languageChangedToEnglish:
+        "Language changed to English.",
+
+      languageChangedToArabic:
+        "Language changed to Arabic.",
+
       darkMode: "Dark mode",
       lightMode: "Light mode",
 
@@ -649,6 +655,12 @@ const translations = {
 
       switchToArabic: "التبديل إلى اللغة العربية",
       switchToEnglish: "التبديل إلى اللغة الإنجليزية",
+
+      languageChangedToEnglish:
+        "تم تغيير اللغة إلى الإنجليزية.",
+
+      languageChangedToArabic:
+        "تم تغيير اللغة إلى العربية.",
 
       darkMode: "الوضع الداكن",
       lightMode: "الوضع الفاتح",
@@ -1555,17 +1567,98 @@ function setLanguage(language) {
 
 
 /**
+ * Returns the hidden live region used to announce
+ * user-initiated language changes.
+ *
+ * @returns {HTMLElement}
+ */
+function getLanguageStatusRegion() {
+  let statusRegion =
+    document.querySelector(
+      "[data-language-status]"
+    );
+
+  if (statusRegion) {
+    return statusRegion;
+  }
+
+  statusRegion =
+    document.createElement("div");
+
+  statusRegion.className =
+    "visually-hidden";
+
+  statusRegion.dataset.languageStatus = "";
+
+  statusRegion.setAttribute(
+    "role",
+    "status"
+  );
+
+  statusRegion.setAttribute(
+    "aria-live",
+    "polite"
+  );
+
+  statusRegion.setAttribute(
+    "aria-atomic",
+    "true"
+  );
+
+  document.body.append(statusRegion);
+
+  return statusRegion;
+}
+
+
+/**
+ * Announces a user-initiated language switch.
+ *
+ * @param {string} language
+ */
+function announceLanguageChange(language) {
+  const statusRegion =
+    getLanguageStatusRegion();
+
+  const translationKey =
+    language ===
+    SUPPORTED_LANGUAGES.ARABIC
+      ? "common.languageChangedToArabic"
+      : "common.languageChangedToEnglish";
+
+  statusRegion.textContent = "";
+
+  window.setTimeout(
+    function () {
+      statusRegion.textContent =
+        translate(
+          translationKey,
+          language
+        );
+    },
+    0
+  );
+}
+
+
+/**
  * Switches between English and Arabic.
  */
 function toggleLanguage() {
-  const currentLanguage = getCurrentLanguage();
+  const currentLanguage =
+    getCurrentLanguage();
 
   const nextLanguage =
-    currentLanguage === SUPPORTED_LANGUAGES.ENGLISH
+    currentLanguage ===
+    SUPPORTED_LANGUAGES.ENGLISH
       ? SUPPORTED_LANGUAGES.ARABIC
       : SUPPORTED_LANGUAGES.ENGLISH;
 
   setLanguage(nextLanguage);
+
+  announceLanguageChange(
+    nextLanguage
+  );
 }
 
 

@@ -171,7 +171,7 @@
       </div>
     </header>
 
-    <main id="main-content">
+    <main id="main-content" tabindex="-1">
       <section
         class="page-introduction section"
         aria-labelledby="resources-page-title"
@@ -229,6 +229,8 @@
             class="filter-panel"
             data-resource-filters
             role="search"
+            aria-label="Resource search and filters"
+            data-i18n-aria-label="resources.filterRegionLabel"
           >
             <div class="filter-grid">
               <div class="form-field filter-field--search">
@@ -561,7 +563,9 @@
             <p
               class="results-count"
               data-resource-count
+              role="status"
               aria-live="polite"
+              aria-atomic="true"
             >
               12 resources found
             </p>
@@ -577,12 +581,12 @@
             data-no-resources
             hidden
           >
-            <h2
+            <h3
               data-no-results-title
               data-i18n="resources.noResultsTitle"
             >
               No matching resources
-            </h2>
+            </h3>
 
             <p
               data-no-results-description
@@ -604,7 +608,9 @@
           <p
             class="resource-action-message"
             data-resource-action-message
+            role="status"
             aria-live="polite"
+            aria-atomic="true"
           ></p>
         </div>
       </section>

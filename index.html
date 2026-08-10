@@ -169,7 +169,7 @@
       </div>
     </header>
 
-    <main id="main-content">
+    <main id="main-content" tabindex="-1">
       <section
         class="hero section"
         aria-labelledby="home-page-title"
@@ -973,7 +973,9 @@
                 id="newsletter-message"
                 class="field-message"
                 data-newsletter-message
+                role="status"
                 aria-live="polite"
+                aria-atomic="true"
               ></p>
             </form>
           </div>

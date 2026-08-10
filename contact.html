@@ -170,7 +170,7 @@
       </div>
     </header>
 
-    <main id="main-content">
+    <main id="main-content" tabindex="-1">
       <section
         class="page-introduction section"
         aria-labelledby="contact-page-title"
@@ -322,6 +322,8 @@
             <div
               class="alert alert--success contact-form-status"
               role="status"
+              aria-live="polite"
+              aria-atomic="true"
               tabindex="-1"
               data-contact-status
               hidden
@@ -333,6 +335,7 @@
               action="#"
               method="post"
               novalidate
+              aria-labelledby="contact-form-title"
               data-contact-form
             >
               <div class="contact-form-grid">
@@ -360,6 +363,7 @@
                     name="name"
                     autocomplete="name"
                     maxlength="80"
+                    required
                     placeholder="Enter your full name"
                     data-i18n-placeholder="contact.namePlaceholder"
                     aria-describedby="contact-name-error"
@@ -371,6 +375,7 @@
                     class="field-message field-message--error"
                     data-field-error="name"
                     aria-live="polite"
+                    aria-atomic="true"
                   ></p>
                 </div>
 
@@ -398,6 +403,7 @@
                     name="email"
                     autocomplete="email"
                     maxlength="120"
+                    required
                     placeholder="Enter your email address"
                     data-i18n-placeholder="contact.emailPlaceholder"
                     aria-describedby="contact-email-error"
@@ -409,6 +415,7 @@
                     class="field-message field-message--error"
                     data-field-error="email"
                     aria-live="polite"
+                    aria-atomic="true"
                   ></p>
                 </div>
 
@@ -435,6 +442,7 @@
                     type="text"
                     name="subject"
                     maxlength="120"
+                    required
                     placeholder="What would you like to ask about?"
                     data-i18n-placeholder="contact.subjectPlaceholder"
                     aria-describedby="contact-subject-error"
@@ -446,6 +454,7 @@
                     class="field-message field-message--error"
                     data-field-error="subject"
                     aria-live="polite"
+                    aria-atomic="true"
                   ></p>
                 </div>
 
@@ -471,6 +480,7 @@
                     class="form-control"
                     name="message"
                     maxlength="1000"
+                    required
                     rows="7"
                     placeholder="Write your message"
                     data-i18n-placeholder="contact.messagePlaceholder"
@@ -491,6 +501,7 @@
                     class="field-message field-message--error"
                     data-field-error="message"
                     aria-live="polite"
+                    aria-atomic="true"
                   ></p>
                 </div>
 
@@ -517,6 +528,7 @@
                       <input
                         type="radio"
                         name="preferred-contact"
+                        required
                         value="email"
                         data-preferred-contact
                       >
@@ -530,6 +542,7 @@
                       <input
                         type="radio"
                         name="preferred-contact"
+                        required
                         value="whatsapp"
                         data-preferred-contact
                       >
@@ -545,6 +558,7 @@
                     class="field-message field-message--error"
                     data-field-error="preferredContact"
                     aria-live="polite"
+                    aria-atomic="true"
                   ></p>
                 </fieldset>
               </div>
